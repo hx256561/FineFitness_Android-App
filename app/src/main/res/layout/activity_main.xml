@@ -19,4 +19,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
 
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="temp dev entrance"
+        android:id="@+id/btn_to_tempMain"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

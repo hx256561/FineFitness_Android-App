@@ -1,11 +1,14 @@
 package com.example.streamchatdemo.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.model.ChatUser
+import com.example.streamchatdemo.Stu1Activity
 import com.example.streamchatdemo.ui.login.LoginFragmentDirections
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.name
@@ -28,6 +31,12 @@ class MainActivity : AppCompatActivity() {
                 val action = LoginFragmentDirections.actionLoginFragmentToChannelFragment(user)
                 navController.navigate(action)
             }
+        }
+
+        val button: Button = findViewById(R.id.btn_to_tempMain)
+        button.setOnClickListener {
+            val intent = Intent(this, Stu1Activity::class.java)
+            startActivity(intent)
         }
 
     }
