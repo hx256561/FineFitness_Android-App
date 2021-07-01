@@ -1,11 +1,15 @@
 package com.example.streamchatdemo.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.streamchatdemo.R
+import com.example.streamchatdemo.Stu1Activity
 import com.example.streamchatdemo.databinding.FragmentLoginBinding
 import com.example.streamchatdemo.model.ChatUser
 import com.google.android.material.textfield.TextInputLayout
@@ -24,6 +28,12 @@ class LoginFragment : Fragment() {
 
         binding.button.setOnClickListener {
             authenticateTheUser()
+        }
+
+        //我把btn_To_Temp_Main的按鈕所有相關方法都從Main Activity移到Login Activity囉
+        binding.btnToTempMain.setOnClickListener{
+            val intent = Intent(context, Stu1Activity::class.java)
+            startActivity(intent)
         }
 
         return binding.root

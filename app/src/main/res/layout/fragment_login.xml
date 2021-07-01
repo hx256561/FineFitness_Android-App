@@ -85,6 +85,15 @@
         app:layout_constraintEnd_toEndOf="@+id/username_inputLayout"
         app:layout_constraintStart_toStartOf="@+id/username_inputLayout"
         app:layout_constraintTop_toBottomOf="@+id/username_inputLayout" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="temp dev entrance"
+        android:id="@+id/btn_to_tempMain"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,12 +32,6 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(action)
             }
         }
-
-        val button: Button = findViewById(R.id.btn_to_tempMain)
-        button.setOnClickListener {
-            val intent = Intent(this, Stu1Activity::class.java)
-            startActivity(intent)
-        }
-
+        val btnnn:Button=findViewById(R.id.btn_to_tempMain)
     }
 }
