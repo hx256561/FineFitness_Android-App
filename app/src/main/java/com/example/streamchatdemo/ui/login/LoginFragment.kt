@@ -30,11 +30,11 @@ class LoginFragment : Fragment() {
             authenticateTheUser()
         }
 
-        //我把btn_To_Temp_Main的按鈕所有相關方法都從Main Activity移到Login Activity囉
-        binding.btnToTempMain.setOnClickListener{
+        //暫時移除功能
+        /*binding.btnToTempMain.setOnClickListener{
             val intent = Intent(context, Stu1Activity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         return binding.root
     }

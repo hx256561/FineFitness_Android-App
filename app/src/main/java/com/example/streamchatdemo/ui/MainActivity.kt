@@ -10,6 +10,7 @@ import com.example.streamchatdemo.R
 import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.Stu1Activity
 import com.example.streamchatdemo.ui.login.LoginFragmentDirections
+import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.name
 
@@ -23,6 +24,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navController = findNavController(R.id.navHostFragment)
+
+        /*
+        Code below are firebase test(success)
+        //firebase object
+        val db = FirebaseFirestore.getInstance()
+
+        //create a user and upload the data to firebase
+        var user1=ChatUser("Bobbb3","Bobby3")
+        db.collection("Userlist").add(user1)
+        **/
+
 
         if (navController.currentDestination?.label.toString().contains("login")) {
             val currentUser = client.getCurrentUser()
