@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         navController = findNavController(R.id.navHostFragment)
 
+
         /*
-        Code below are firebase test(success)
+        //Code below are firebase test(success)
         //firebase object
         val db = FirebaseFirestore.getInstance()
-
         //create a user and upload the data to firebase
-        var user1=ChatUser("Bobbb3","Bobby3")
+        var user1=ChatUser("Bobbb4","Bobby4")
         db.collection("Userlist").add(user1)
         **/
 
@@ -44,6 +44,6 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(action)
             }
         }
-        val btnnn:Button=findViewById(R.id.btn_to_tempMain)
+
     }
 }

@@ -36,7 +36,23 @@ class LoginFragment : Fragment() {
             startActivity(intent)
         }*/
 
+        binding.newLoginBtn.setOnClickListener {
+            goToNewLogin()
+        }
+
         return binding.root
+    }
+
+    private fun goToNewLogin(){
+        val firstName = binding.firstNameEditText.text.toString()
+        val username = binding.usernameEditText.text.toString()
+        if (validateInput(firstName, binding.firstNameInputLayout) &&
+            validateInput(username, binding.usernameInputLayout)
+        ) {
+            val chatUser = ChatUser(firstName, username)
+            val action = LoginFragmentDirections.actionLoginFragmentToNewLogin(chatUser)
+            findNavController().navigate(action)
+        }
     }
 
     private fun authenticateTheUser() {
