@@ -90,5 +90,12 @@
         <action
             android:id="@+id/action_newLogin_to_channelFragment"
             app:destination="@id/channelFragment" />
+        <action
+            android:id="@+id/action_newLogin_to_student_Home"
+            app:destination="@id/student_Home" />
     </fragment>
+    <fragment
+        android:id="@+id/student_Home"
+        android:name="com.example.streamchatdemo.muscleFlow.student_Home"
+        android:label="student_Home" />
 </navigation>

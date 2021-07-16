@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Coach page" android:icon="@drawable/coach_icon"
+        android:id="@+id/toCoach"/>
+    <item android:title="Channel" android:icon="@drawable/channel_icon"
+        android:id="@+id/toChannel"/>
+    <item android:title="Student page" android:icon="@drawable/student_icon"
+        android:id="@+id/toStudent"/>
+</menu>

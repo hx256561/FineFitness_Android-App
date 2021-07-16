@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.Stu1Activity
 import com.example.streamchatdemo.ui.login.LoginFragmentDirections
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.name
