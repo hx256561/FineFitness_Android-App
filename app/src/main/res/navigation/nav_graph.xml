@@ -105,5 +105,17 @@
     <fragment
         android:id="@+id/student_asking1"
         android:name="com.example.streamchatdemo.muscleFlow.student_asking1"
-        android:label="student_asking1" />
+        android:label="student_asking1" >
+        <action
+            android:id="@+id/action_student_asking1_to_student_asking2"
+            app:destination="@id/student_asking2" />
+    </fragment>
+    <fragment
+        android:id="@+id/student_asking2"
+        android:name="com.example.streamchatdemo.muscleFlow.student_asking2"
+        android:label="student_asking2" >
+        <action
+            android:id="@+id/action_student_asking2_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
 </navigation>
