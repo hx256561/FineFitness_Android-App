@@ -97,5 +97,13 @@
     <fragment
         android:id="@+id/student_Home"
         android:name="com.example.streamchatdemo.muscleFlow.student_Home"
-        android:label="student_Home" />
+        android:label="student_Home" >
+        <action
+            android:id="@+id/action_student_Home_to_student_asking1"
+            app:destination="@id/student_asking1" />
+    </fragment>
+    <fragment
+        android:id="@+id/student_asking1"
+        android:name="com.example.streamchatdemo.muscleFlow.student_asking1"
+        android:label="student_asking1" />
 </navigation>
