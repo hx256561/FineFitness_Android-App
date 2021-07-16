@@ -59,11 +59,4 @@ class newLogin : Fragment() {
     }
 
 
-    /*
-    private fun goToChannel(){
-        val action=newLoginDirections.actionNewLoginToChannelFragment(args.chatUser)
-        findNavController().navigate(action)
-    }
-     */
-
 }

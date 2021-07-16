@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home" android:icon="@drawable/stuhome_icon" android:id="@+id/toHome"/>
+    <item android:title="Ask" android:icon="@drawable/asking_icon" android:id="@+id/toAsk"/>
+    <item android:title="Subscription" android:icon="@drawable/subscription_icon" android:id="@+id/toSubs"/>
+    <item android:title="Profile" android:icon="@drawable/student_icon" android:id="@+id/toProfile"/>
+</menu>
