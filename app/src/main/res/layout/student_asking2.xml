@@ -25,6 +25,7 @@
         android:background="@color/black"
         app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
-        app:menu="@menu/student_bottom_menu"/>
+        app:menu="@menu/student_bottom_menu"
+        app:labelVisibilityMode="labeled"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

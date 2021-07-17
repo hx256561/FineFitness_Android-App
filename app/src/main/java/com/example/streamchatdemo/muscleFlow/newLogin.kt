@@ -34,11 +34,13 @@ class newLogin : Fragment() {
             R.id.toStudent -> {
                 val action=newLoginDirections.actionNewLoginToStudentHome()
                 findNavController().navigate(action)
+                return@OnNavigationItemSelectedListener true
             }
 
             R.id.toChannel -> {
                 val action=newLoginDirections.actionNewLoginToChannelFragment(args.chatUser)
                 findNavController().navigate(action)
+                return@OnNavigationItemSelectedListener true
             }
 
         }
