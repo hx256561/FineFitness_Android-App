@@ -32,7 +32,7 @@ class newLogin : Fragment() {
 
         when (item.itemId) {
             R.id.toStudent -> {
-                val action=newLoginDirections.actionNewLoginToStudentHome()
+                val action=newLoginDirections.actionNewLoginToStudentHomeActivity(args.chatUser)
                 findNavController().navigate(action)
                 return@OnNavigationItemSelectedListener true
             }

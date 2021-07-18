@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student_nav"
+    app:startDestination="@id/studentEmpty_fragment">
+    <fragment
+        android:id="@+id/studentEmpty_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentEmpty_fragment"
+        android:label="studentEmpty_fragment" >
+        <argument
+            android:name="chatUser"
+            app:argType="com.example.streamchatdemo.model.ChatUser" />
+        <action
+            android:id="@+id/action_studentEmpty_fragment_to_studentHome_fragment"
+            app:destination="@id/studentHome_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentHome_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentHome_fragment"
+        android:label="studentHome_fragment" >
+        <argument
+            android:name="chatUser"
+            app:argType="com.example.streamchatdemo.model.ChatUser" />
+    </fragment>
+</navigation>

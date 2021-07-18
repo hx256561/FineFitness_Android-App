@@ -93,6 +93,9 @@
         <action
             android:id="@+id/action_newLogin_to_student_Home"
             app:destination="@id/student_Home" />
+        <action
+            android:id="@+id/action_newLogin_to_studentHome_Activity"
+            app:destination="@id/studentHome_Activity" />
     </fragment>
     <fragment
         android:id="@+id/student_Home"
@@ -118,4 +121,13 @@
             android:id="@+id/action_student_asking2_to_chatFragment"
             app:destination="@id/chatFragment" />
     </fragment>
+    <activity
+        android:id="@+id/studentHome_Activity"
+        android:name="com.example.streamchatdemo.studentSystem.studentHome_Activity"
+        android:label="activity_student_home"
+        tools:layout="@layout/activity_student_home">
+        <argument
+            android:name="chatUser"
+            app:argType="com.example.streamchatdemo.model.ChatUser" />
+    </activity>
 </navigation>
