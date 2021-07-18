@@ -2,6 +2,7 @@ package com.example.streamchatdemo.studentSystem
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -49,6 +50,9 @@ class studentHome_Activity : AppCompatActivity() {
         //----------------------------------------------------
 
         studentBottomNav.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        studentBottomNav.setOnNavigationItemReselectedListener(BottomNavigationView.OnNavigationItemReselectedListener {
+            Log.e("bottomMenuView:", it.itemId.toString())
+        })
 
         var action1=studentEmpty_fragmentDirections.actionStudentEmptyFragmentToStudentHomeFragment(args.chatUser)
         navController.navigate(action1)
