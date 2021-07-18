@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_studentHome_fragment_to_studentProfile_fragment"
             app:destination="@id/studentProfile_fragment" />
+        <action
+            android:id="@+id/action_studentHome_fragment_self"
+            app:destination="@id/studentHome_fragment" />
     </fragment>
     <fragment
         android:id="@+id/studentProfile_fragment"
@@ -36,6 +39,9 @@
         <argument
             android:name="chatUser"
             app:argType="com.example.streamchatdemo.model.ChatUser" />
+        <action
+            android:id="@+id/action_studentProfile_fragment_to_studentHome_fragment"
+            app:destination="@id/studentHome_fragment" />
     </fragment>
 
 </navigation>
