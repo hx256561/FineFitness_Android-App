@@ -20,7 +20,7 @@
         app:navGraph="@navigation/student_nav" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/stu_bottomNavigationView"
+        android:id="@+id/student_bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
