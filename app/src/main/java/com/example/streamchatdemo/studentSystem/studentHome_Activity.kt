@@ -27,19 +27,19 @@ class studentHome_Activity : AppCompatActivity() {
         var studentBottomNav=findViewById<BottomNavigationView>(R.id.student_bottomNavigationView)
 
         //----------------------------------------------------
-        var action2=studentHome_fragmentDirections.actionStudentHomeFragmentSelf(args.chatUser)
+        var action_1=studentHome_fragmentDirections.actionStudentHomeFragmentToStudentProfileFragment(args.chatUser)
+        var action_2=studentHome_fragmentDirections.actionStudentHomeFragmentSelf(args.chatUser)
 
         val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
             when (item.itemId) {
                 R.id.toProfile -> {
-                    var action1=studentHome_fragmentDirections.actionStudentHomeFragmentToStudentProfileFragment(args.chatUser)
-                    navController.navigate(action1)
-                    action2=studentProfile_fragmentDirections.actionStudentProfileFragmentToStudentHomeFragment(args.chatUser)
+                    navController.navigate(action_1)
+                    action_2=studentProfile_fragmentDirections.actionStudentProfileFragmentToStudentHomeFragment(args.chatUser)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.toHome -> {
-                    navController.navigate(action2)
+                    navController.navigate(action_2)
                     return@OnNavigationItemSelectedListener true
                 }
 
