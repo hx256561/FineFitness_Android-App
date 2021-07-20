@@ -71,6 +71,8 @@ class ChannelFragment : Fragment() {
         return binding.root
     }
 
+    var hahaha = "https://image.u-car.com.tw/theme/5E0A5AE9-9A99-491A-A1E6-0159BDFC3E1E.jpg"
+
     private fun setupUser() {
         if (client.getCurrentUser() == null) {
             user = if (args.chatUser.firstName.contains("Stefan")) {
@@ -79,7 +81,8 @@ class ChannelFragment : Fragment() {
                     extraData = mutableMapOf(
                         "name" to args.chatUser.firstName,
                         "county" to "Serbia",
-                        "image" to "https://yt3.ggpht.com/ytc/AAUvwniNg3lwIeJ-ybvA1xuWBEzLoYA5KPxnKrojub0zhg=s900-c-k-c0x00ffffff-no-rj"
+                        //"image" to "https://image.u-car.com.tw/theme/5E0A5AE9-9A99-491A-A1E6-0159BDFC3E1E.jpg"
+                        "image" to hahaha
                     )
                 )
             } else {

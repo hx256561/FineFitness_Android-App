@@ -26,11 +26,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/black"
-        app:itemTextColor="@color/white"
-        app:itemIconTint="@color/white"
+        android:background="#232323"
+        app:itemTextColor="@drawable/bottom_nav_selector"
+        app:itemIconTint="@drawable/bottom_nav_selector"
         app:menu="@menu/student_bottom_menu"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
