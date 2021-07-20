@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
 import com.example.streamchatdemo.databinding.StudentHomeFragmentBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 class studentHome_fragment: Fragment() {
 
@@ -24,7 +25,4 @@ class studentHome_fragment: Fragment() {
         return binding.root
     }
 
-    private fun changeMonster(){
-
-    }
 }
