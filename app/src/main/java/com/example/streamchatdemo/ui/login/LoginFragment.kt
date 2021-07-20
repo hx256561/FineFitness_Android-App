@@ -49,7 +49,7 @@ class LoginFragment : Fragment() {
         if (validateInput(firstName, binding.firstNameInputLayout) &&
             validateInput(username, binding.usernameInputLayout)
         ) {
-            val chatUser = ChatUser(firstName, username)
+            val chatUser = ChatUser(firstName, username,0)
             val action = LoginFragmentDirections.actionLoginFragmentToNewLogin(chatUser)
             findNavController().navigate(action)
         }
@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
         if (validateInput(firstName, binding.firstNameInputLayout) &&
             validateInput(username, binding.usernameInputLayout)
         ) {
-            val chatUser = ChatUser(firstName, username)
+            val chatUser = ChatUser(firstName, username,0)
             val action = LoginFragmentDirections.actionLoginFragmentToChannelFragment(chatUser)
             findNavController().navigate(action)
         }

@@ -23,4 +23,8 @@ class studentHome_fragment: Fragment() {
         _binding= StudentHomeFragmentBinding.inflate(inflater,container,false)
         return binding.root
     }
+
+    private fun changeMonster(){
+
+    }
 }

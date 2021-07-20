@@ -33,20 +33,20 @@ class MainActivity : AppCompatActivity() {
 
         navController = findNavController(R.id.navHostFragment)
 
-        /*
+
         //Code below are firebase test(success)
         //firebase object
         val db = FirebaseFirestore.getInstance()
         //create a user and upload the data to firebase
-        var user1=ChatUser("Bobbb4","Bobby4")
+        var user1=ChatUser("Bobbb8","Bobby8",0)
         db.collection("Userlist").add(user1)
-        **/
+
 
 
         if (navController.currentDestination?.label.toString().contains("login")) {
             val currentUser = client.getCurrentUser()
             if (currentUser != null) {
-                val user = ChatUser(currentUser.name, currentUser.id)
+                val user = ChatUser(currentUser.name, currentUser.id,0)
                 val action = LoginFragmentDirections.actionLoginFragmentToChannelFragment(user)
                 navController.navigate(action)
             }
