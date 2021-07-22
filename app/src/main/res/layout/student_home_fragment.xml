@@ -9,7 +9,6 @@
         android:id="@+id/monster_image"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@drawable/monster_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
