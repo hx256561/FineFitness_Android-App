@@ -25,6 +25,8 @@ class studentProfile_fragment:Fragment() {
     private val binding2 get()=_binding2!!
     private val db = FirebaseFirestore.getInstance()
 
+    private var expValue:Int=0
+    private var addedValue:Int=0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,14 +35,49 @@ class studentProfile_fragment:Fragment() {
     ): View? {
         _binding= StudentProfileFragmentBinding.inflate(inflater,container,false)
 
-        addExp()
+        //addExp()
         getExp()
+
+        binding.addExpBtn.setOnClickListener {
+            //var expValue:Int=0
+            db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
+                .get()
+                .addOnCompleteListener {
+                    var result:String= String()
+                    if(it.isSuccessful){
+                        result=it.result!!.data!!.getValue("exp").toString()
+                    }
+                    expValue=result.toInt()
+                }
+            //var addedValue:Int=0
+            if(expValue==0){
+                addedValue=expValue+100
+            }else{
+                addedValue=addedValue+100
+            }
+            db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9").update("exp",addedValue)
+        }
+
         return binding.root
     }
 
     private fun addExp(){
-        binding.addExpBtn.setOnClickListener {
-            db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9").update("exp",200)
+
+        //var expValue:Int=0
+        db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
+            .get()
+            .addOnCompleteListener {
+                var result:String= String()
+                if(it.isSuccessful){
+                    result=it.result!!.data!!.getValue("exp").toString()
+                }
+                expValue=result.toInt()
+            }
+        //var addedValue:Int=0
+        if(expValue==0){
+            addedValue=expValue+100
+        }else{
+            addedValue=addedValue+100
         }
     }
 
