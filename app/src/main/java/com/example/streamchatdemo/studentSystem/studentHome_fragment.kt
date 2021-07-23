@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
 import com.example.streamchatdemo.R
@@ -25,6 +26,12 @@ class studentHome_fragment: Fragment() {
     ): View? {
         _binding= StudentHomeFragmentBinding.inflate(inflater,container,false)
         changeMonsterImage()
+
+        binding.btGoToTrainMenu.setOnClickListener {
+            val action = studentHome_fragmentDirections.actionStudentHomeFragmentToStudentHomeTrainMenuFragment()
+            findNavController().navigate(action)
+        }
+
         return binding.root
     }
 

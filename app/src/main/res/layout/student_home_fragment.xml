@@ -27,4 +27,14 @@
         app:layout_constraintVertical_bias="0.050000012"
         android:textStyle="bold"></TextView>
 
+    <Button
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:id="@+id/bt_goToTrainMenu"
+        android:background="@drawable/ic_right_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

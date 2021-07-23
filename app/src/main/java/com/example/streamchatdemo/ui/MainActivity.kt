@@ -2,6 +2,7 @@ package com.example.streamchatdemo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.streamchatdemo.R
@@ -9,6 +10,7 @@ import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.ui.login.LoginFragmentDirections
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.name
+import kotlin.io.print as print1
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        // below was from sample code，一開app會被呼叫一次，用意是(猜)如果手機自動填寫了帳密就直接登入到channelFragment-->目前可忽略
         if (navController.currentDestination?.label.toString().contains("login")) {
             val currentUser = client.getCurrentUser()
             if (currentUser != null) {

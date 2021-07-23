@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_studentHome_fragment_self"
             app:destination="@id/studentHome_fragment" />
+        <action
+            android:id="@+id/action_studentHome_fragment_to_studentHomeTrainMenu_fragment"
+            app:destination="@id/studentHomeTrainMenu_fragment" />
     </fragment>
     <fragment
         android:id="@+id/studentProfile_fragment"
@@ -27,6 +30,14 @@
             app:argType="com.example.streamchatdemo.model.ChatUser" />
         <action
             android:id="@+id/action_studentProfile_fragment_to_studentHome_fragment"
+            app:destination="@id/studentHome_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentHomeTrainMenu_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentHomeTrainMenu_fragment"
+        android:label="studentHomeTrainMenu_fragment" >
+        <action
+            android:id="@+id/action_studentHomeTrainMenu_fragment_to_studentHome_fragment"
             app:destination="@id/studentHome_fragment" />
     </fragment>
 
