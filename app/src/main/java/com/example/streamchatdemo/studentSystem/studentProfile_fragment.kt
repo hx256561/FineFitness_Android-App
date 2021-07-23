@@ -15,6 +15,7 @@ import com.getstream.sdk.chat.ChatUI.Companion.instance
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import io.getstream.chat.android.client.ChatClient
 
 class studentProfile_fragment:Fragment() {
 
@@ -24,6 +25,7 @@ class studentProfile_fragment:Fragment() {
     private val db = FirebaseFirestore.getInstance()
     lateinit var initialExp:Number
     private var newExp:Int=0
+    private val client = ChatClient.instance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +33,9 @@ class studentProfile_fragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding= StudentProfileFragmentBinding.inflate(inflater,container,false)
+
+        val currentUser = client.getCurrentUser()
+        binding.textviewUserName.text = currentUser?.id
 
         db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
             .get()
@@ -59,6 +64,7 @@ class studentProfile_fragment:Fragment() {
 
         return binding.root
     }
+
 
 
     private fun getExp(){
