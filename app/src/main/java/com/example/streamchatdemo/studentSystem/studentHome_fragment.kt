@@ -13,7 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class studentHome_fragment: Fragment() {
 
-    private val args: studentHome_fragmentArgs by navArgs()
+    private val args: studentHome_ActivityArgs by navArgs()
     private var _binding:StudentHomeFragmentBinding?=null
     private val binding get()=_binding!!
     private val db = FirebaseFirestore.getInstance()

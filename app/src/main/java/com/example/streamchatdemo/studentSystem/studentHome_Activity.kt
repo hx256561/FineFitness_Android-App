@@ -54,10 +54,6 @@ class studentHome_Activity : AppCompatActivity() {
             Log.e("bottomMenuView:", it.itemId.toString())
         })
 
-        var action1=studentEmpty_fragmentDirections.actionStudentEmptyFragmentToStudentHomeFragment(args.chatUser)
-        navController.navigate(action1)
-
-
 
     }
 
