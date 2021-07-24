@@ -2,7 +2,6 @@ package com.example.streamchatdemo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.streamchatdemo.R
@@ -10,7 +9,6 @@ import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.ui.login.LoginFragmentDirections
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.name
-import kotlin.io.print as print1
 
 class MainActivity : AppCompatActivity() {
 

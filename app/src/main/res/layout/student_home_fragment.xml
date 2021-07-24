@@ -5,36 +5,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_2">
 
-    <ImageView
-        android:id="@+id/monster_image"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ImageView>
-
-    <TextView
-        android:id="@+id/monster_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lil Monsta"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/monster_image"
-        app:layout_constraintVertical_bias="0.050000012"
-        android:textStyle="bold"></TextView>
-
-    <Button
-        android:layout_height="30dp"
-        android:layout_width="30dp"
-        android:id="@+id/bt_goToTrainMenu"
-        android:background="@drawable/ic_right_arrow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </Button>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

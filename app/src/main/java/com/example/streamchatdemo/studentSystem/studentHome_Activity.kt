@@ -3,11 +3,16 @@ package com.example.streamchatdemo.studentSystem
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
+import androidx.viewpager.widget.ViewPager
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.muscleFlow.newLoginArgs
 import com.example.streamchatdemo.muscleFlow.newLoginDirections
@@ -24,10 +29,11 @@ class studentHome_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_home)
 
+
         navController = findNavController(R.id.student_navHostFragment)
         var studentBottomNav=findViewById<BottomNavigationView>(R.id.student_bottomNavigationView)
 
-        //----------------------------------------------------
+        //----------------Bottom Navigation------------------------------------
         var action_1=studentHome_fragmentDirections.actionStudentHomeFragmentToStudentProfileFragment(args.chatUser)
         var action_2=studentHome_fragmentDirections.actionStudentHomeFragmentSelf(args.chatUser)
 
@@ -47,13 +53,12 @@ class studentHome_Activity : AppCompatActivity() {
             }
             false
         }
-        //----------------------------------------------------
 
         studentBottomNav.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         studentBottomNav.setOnNavigationItemReselectedListener(BottomNavigationView.OnNavigationItemReselectedListener {
             Log.e("bottomMenuView:", it.itemId.toString())
         })
-
+        //--------------------------------------------------------------------
 
     }
 

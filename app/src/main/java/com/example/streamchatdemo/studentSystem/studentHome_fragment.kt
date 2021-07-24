@@ -5,10 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
+import androidx.viewpager.widget.ViewPager
 import com.example.streamchatdemo.R
+import com.example.streamchatdemo.adapter.myViewPagerAdapter
 import com.example.streamchatdemo.databinding.StudentHomeFragmentBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -25,31 +29,15 @@ class studentHome_fragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding= StudentHomeFragmentBinding.inflate(inflater,container,false)
-        changeMonsterImage()
 
-        binding.btGoToTrainMenu.setOnClickListener {
-            val action = studentHome_fragmentDirections.actionStudentHomeFragmentToStudentHomeTrainMenuFragment()
-            findNavController().navigate(action)
-        }
+        val adapter= myViewPagerAdapter(childFragmentManager)
+        adapter.addFragment(studentHome2_fragment())
+        adapter.addFragment(studentTrainMenu_fragment())
+        val viewPager=binding.viewPager
+        viewPager.adapter=adapter
 
         return binding.root
     }
 
-    private fun changeMonsterImage(){
-        db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
-            .get()
-            .addOnCompleteListener {
-                var result:String= String()
-                if(it.isSuccessful){
-                    result=it.result!!.data!!.getValue("exp").toString()
-                }
-                var expValue=result.toInt()
-                if(expValue < 400){
-                    binding.monsterImage.setBackgroundResource(R.drawable.monster_1)
-                }else{
-                    binding.monsterImage.setBackgroundResource(R.drawable.test_monster1)
-                }
-            }
-    }
 
 }

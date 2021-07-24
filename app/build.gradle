@@ -74,4 +74,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation "com.google.firebase:firebase-iid"
 
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
+
 }
