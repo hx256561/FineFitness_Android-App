@@ -28,6 +28,14 @@ class trainMenuAdapter:RecyclerView.Adapter<trainMenuAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: trainMenuAdapter.MyViewHolder, position: Int) {
         holder.binding.trainMenuItem.setText(trainMenuList[position].itemName)
+        holder.binding.trainMenuItem.setOnClickListener {
+            if(holder.binding.trainMenuItem.isChecked.equals(false)){
+                holder.binding.trainMenuItem.isChecked=true
+            }else{
+                holder.binding.trainMenuItem.isChecked=false
+            }
+        }
+
     }
 
     override fun getItemCount(): Int {
