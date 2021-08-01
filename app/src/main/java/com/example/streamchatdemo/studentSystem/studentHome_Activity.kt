@@ -9,9 +9,11 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
+import androidx.navigation.ui.NavigationUI
 import androidx.viewpager.widget.ViewPager
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.muscleFlow.newLoginArgs
@@ -31,35 +33,12 @@ class studentHome_Activity : AppCompatActivity() {
 
 
         navController = findNavController(R.id.student_navHostFragment)
-        var studentBottomNav=findViewById<BottomNavigationView>(R.id.student_bottomNavigationView)
+        setUpNavigation()
+    }
 
-        //----------------Bottom Navigation------------------------------------
-        var action_1=studentHome_fragmentDirections.actionStudentHomeFragmentToStudentProfileFragment(args.chatUser)
-        var action_2=studentHome_fragmentDirections.actionStudentHomeFragmentSelf(args.chatUser)
-
-        val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-
-            when (item.itemId) {
-                R.id.toProfile -> {
-                    navController.navigate(action_1)
-                    action_2=studentProfile_fragmentDirections.actionStudentProfileFragmentToStudentHomeFragment(args.chatUser)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.toHome -> {
-                    navController.navigate(action_2)
-                    return@OnNavigationItemSelectedListener true
-                }
-
-            }
-            false
-        }
-
-        studentBottomNav.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-        studentBottomNav.setOnNavigationItemReselectedListener(BottomNavigationView.OnNavigationItemReselectedListener {
-            Log.e("bottomMenuView:", it.itemId.toString())
-        })
-        //--------------------------------------------------------------------
-
+    private fun setUpNavigation(){
+        val bottomNavigationView=findViewById<BottomNavigationView>(R.id.student_bottomNavigationView)
+        NavigationUI.setupWithNavController(bottomNavigationView,navController)
     }
 
 }

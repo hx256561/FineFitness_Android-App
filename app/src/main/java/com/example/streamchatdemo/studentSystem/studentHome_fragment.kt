@@ -16,6 +16,7 @@ import com.example.streamchatdemo.adapter.myViewPagerAdapter
 import com.example.streamchatdemo.databinding.StudentHomeFragmentBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
+
 class studentHome_fragment: Fragment() {
 
     private val args: studentHome_ActivityArgs by navArgs()
@@ -28,14 +29,14 @@ class studentHome_fragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding= StudentHomeFragmentBinding.inflate(inflater,container,false)
-
-        val adapter= myViewPagerAdapter(childFragmentManager)
-        adapter.addFragment(studentHome2_fragment())
-        adapter.addFragment(studentTrainMenu_fragment())
-        val viewPager=binding.viewPager
-        viewPager.adapter=adapter
-
+        if(_binding==null){
+            _binding= StudentHomeFragmentBinding.inflate(inflater,container,false)
+            val adapter= myViewPagerAdapter(childFragmentManager)
+            adapter.addFragment(studentHome2_fragment())
+            adapter.addFragment(studentTrainMenu_fragment())
+            val viewPager=binding.viewPager
+            viewPager.adapter=adapter
+        }
         return binding.root
     }
 

@@ -13,10 +13,14 @@
             app:argType="com.example.streamchatdemo.model.ChatUser" />
         <action
             android:id="@+id/action_studentHome_fragment_to_studentProfile_fragment"
-            app:destination="@id/studentProfile_fragment" />
+            app:destination="@id/studentProfile_fragment"
+            app:popUpTo="@id/studentProfile_fragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_studentHome_fragment_self"
-            app:destination="@id/studentHome_fragment" />
+            app:destination="@id/studentHome_fragment"
+            app:popUpTo="@id/studentHome_fragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/studentProfile_fragment"
@@ -27,7 +31,10 @@
             app:argType="com.example.streamchatdemo.model.ChatUser" />
         <action
             android:id="@+id/action_studentProfile_fragment_to_studentHome_fragment"
-            app:destination="@id/studentHome_fragment" />
+            app:destination="@id/studentHome_fragment"
+            app:popUpTo="@id/studentHome_fragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
 </navigation>
+

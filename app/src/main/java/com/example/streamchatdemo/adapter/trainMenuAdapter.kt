@@ -8,6 +8,7 @@ import com.example.streamchatdemo.model.trainMenuItem
 import com.example.streamchatdemo.studentSystem.dataBase
 import com.google.firebase.firestore.FirebaseFirestore
 
+//之後菜單要寫進sqlite
 class trainMenuAdapter:RecyclerView.Adapter<trainMenuAdapter.MyViewHolder>() {
 
     var trainMenuList= mutableListOf<trainMenuItem>()
@@ -30,11 +31,9 @@ class trainMenuAdapter:RecyclerView.Adapter<trainMenuAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: trainMenuAdapter.MyViewHolder, position: Int) {
         holder.binding.trainMenuItem.setText(trainMenuList[position].itemName)
         holder.binding.trainMenuItem.setOnClickListener {
-            if(holder.binding.trainMenuItem.isChecked.equals(false)){
+            if(holder.binding.trainMenuItem.isChecked==false){
                 holder.binding.trainMenuItem.isChecked=true
-                //-------------------------------------------------
                 var result:String= String()
-                //var mid:Number
                 db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
                     .get()
                     .addOnCompleteListener {
@@ -43,11 +42,28 @@ class trainMenuAdapter:RecyclerView.Adapter<trainMenuAdapter.MyViewHolder>() {
                         }
                         db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9").update("exp",result.toInt()+10)
                     }
-                //db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9").update("exp",mid.toInt()+10)
+
+            }else{
+                holder.binding.trainMenuItem.isChecked=false
+            }
+            /*
+            if(holder.binding.trainMenuItem.isChecked.equals(false)){
+                holder.binding.trainMenuItem.isChecked=true
+                //-------------------------------------------------
+                var result:String= String()
+                db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
+                    .get()
+                    .addOnCompleteListener {
+                        if(it.isSuccessful){
+                            result=it.result!!.data!!.getValue("exp").toString()
+                        }
+                        db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9").update("exp",result.toInt()+10)
+                    }
                 //-------------------------------------------------
             }else{
                 holder.binding.trainMenuItem.isChecked=false
             }
+            */
         }
 
     }
