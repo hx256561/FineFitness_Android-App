@@ -7,11 +7,12 @@
         android:id="@+id/train_menu_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="30dp"
         android:text="Item here"
         android:textColor="@color/white"
+        android:checkMarkTint="@color/white"
         android:checkMark="?android:attr/listChoiceIndicatorMultiple"
         />
 
