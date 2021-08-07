@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.ui.login.LoginFragmentDirections
+import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.name
 
@@ -26,10 +27,11 @@ class MainActivity : AppCompatActivity() {
         //firebase object
         val db = FirebaseFirestore.getInstance()
         //create a user and upload the data to firebase
-        var user1=ChatUser("Bobbb9","Bobby9",0)
-        db.collection("Userlist").document("user9").set(user1)
-
+        var user1=ChatUser("Bobbb10","Bobby10",0)
+        db.collection("Userlist").document("user10").set(user1)
          */
+
+
 
 
 

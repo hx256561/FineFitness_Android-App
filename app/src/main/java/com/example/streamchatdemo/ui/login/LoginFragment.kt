@@ -17,6 +17,7 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,12 +28,6 @@ class LoginFragment : Fragment() {
         binding.button.setOnClickListener {
             authenticateTheUser()
         }
-
-        //暫時移除功能
-        /*binding.btnToTempMain.setOnClickListener{
-            val intent = Intent(context, Stu1Activity::class.java)
-            startActivity(intent)
-        }*/
 
         binding.newLoginBtn.setOnClickListener {
             goToNewLogin()
@@ -52,6 +47,7 @@ class LoginFragment : Fragment() {
             findNavController().navigate(action)
         }
     }
+
 
     private fun authenticateTheUser() {
         val firstName = binding.firstNameEditText.text.toString()

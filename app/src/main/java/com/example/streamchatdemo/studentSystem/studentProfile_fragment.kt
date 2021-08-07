@@ -1,6 +1,8 @@
 package com.example.streamchatdemo.studentSystem
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,7 @@ import com.example.streamchatdemo.R
 import com.example.streamchatdemo.databinding.StudentHomeFragmentBinding
 import com.example.streamchatdemo.databinding.StudentProfileFragmentBinding
 import com.example.streamchatdemo.model.ChatUser
+import com.example.streamchatdemo.ui.login.LoginFragment
 import com.getstream.sdk.chat.ChatUI.Companion.instance
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -27,6 +30,9 @@ class studentProfile_fragment:Fragment() {
     private var newExp:Int=0
     private val client = ChatClient.instance()
 
+    val loginF=LoginFragment()
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,10 +40,15 @@ class studentProfile_fragment:Fragment() {
     ): View? {
         _binding= StudentProfileFragmentBinding.inflate(inflater,container,false)
 
-        val currentUser = client.getCurrentUser()
-        binding.textviewUserName.text = currentUser?.id
 
-        db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
+
+        return binding.root
+    }
+
+}
+
+/*
+db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
             .get()
             .addOnCompleteListener {
                 var result:String= String()
@@ -61,22 +72,4 @@ class studentProfile_fragment:Fragment() {
                 }
             db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9").update("exp",initialExp.toInt()+100)
         }
-
-        return binding.root
-    }
-
-
-
-    private fun getExp(){
-        db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
-            .get()
-            .addOnCompleteListener {
-                var result:String= String()
-                if(it.isSuccessful){
-                    result=it.result!!.data!!.getValue("exp").toString()
-                }
-                binding.showExp.setText(result)
-            }
-    }
-
-}
+ */
