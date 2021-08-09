@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Home" android:icon="@drawable/stuhome_icon" android:id="@+id/studentHome_fragment"/>
-    <item android:title="Ask" android:icon="@drawable/asking_icon" android:id="@+id/toAsk"/>
+    <item android:title="Ask" android:icon="@drawable/asking_icon" android:id="@+id/studentAsk1_fragment"/>
     <item android:title="Subscription" android:icon="@drawable/subscription_icon" android:id="@+id/toSubs"/>
     <item android:title="Profile" android:icon="@drawable/student_icon" android:id="@+id/studentProfile_fragment"/>
 </menu>

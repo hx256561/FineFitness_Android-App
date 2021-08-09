@@ -18,7 +18,7 @@ class student_Home: Fragment() {
     private val binding get()=_binding!!
     
     //------------------------------------
-
+    /*
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.toAsk -> {
@@ -30,6 +30,7 @@ class student_Home: Fragment() {
         }
         false
     }
+     */
 
     //------------------------------------
 
@@ -42,7 +43,7 @@ class student_Home: Fragment() {
     ): View? {
         _binding= StudentHomeBinding.inflate(inflater,container,false)
 
-        binding.stuBottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        //binding.stuBottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         
         return binding.root
     }

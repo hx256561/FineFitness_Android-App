@@ -21,6 +21,9 @@
             app:destination="@id/studentHome_fragment"
             app:popUpTo="@id/studentHome_fragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_studentHome_fragment_to_studentAsk1_fragment"
+            app:destination="@id/studentAsk1_fragment" />
     </fragment>
     <fragment
         android:id="@+id/studentProfile_fragment"
@@ -34,6 +37,37 @@
             app:destination="@id/studentHome_fragment"
             app:popUpTo="@id/studentHome_fragment"
             app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/studentAsk1_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentAsk1_fragment"
+        android:label="studentAsk1_fragment" >
+        <action
+            android:id="@+id/action_studentAsk1_fragment_to_studentHome_fragment"
+            app:destination="@id/studentHome_fragment" />
+        <action
+            android:id="@+id/action_studentAsk1_fragment_to_studentAsk2_fragment"
+            app:destination="@id/studentAsk2_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentAsk2_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentAsk2_fragment"
+        android:label="studentAsk2_fragment" >
+        <action
+            android:id="@+id/action_studentAsk2_fragment_to_studentAsk1_fragment"
+            app:destination="@id/studentAsk1_fragment" />
+        <action
+            android:id="@+id/action_studentAsk2_fragment_to_chatFragment2"
+            app:destination="@id/chatFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment2"
+        android:name="com.example.streamchatdemo.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="channelId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

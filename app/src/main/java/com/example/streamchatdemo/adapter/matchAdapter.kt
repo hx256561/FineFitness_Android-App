@@ -8,6 +8,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.streamchatdemo.databinding.UserRowLayoutBinding
 import com.example.streamchatdemo.muscleFlow.student_asking2Directions
+import com.example.streamchatdemo.studentSystem.studentAsk2_fragment
+import com.example.streamchatdemo.studentSystem.studentAsk2_fragmentDirections
 import com.example.streamchatdemo.ui.users.UsersFragmentDirections
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.User
@@ -72,7 +74,7 @@ class matchAdapter : RecyclerView.Adapter<matchAdapter.MyViewHolder>() {
     }
 
     private fun navigateToChatFragment(holder: MyViewHolder, cid: String) {
-        val action = student_asking2Directions.actionStudentAsking2ToChatFragment(cid)
+        val action = studentAsk2_fragmentDirections.actionStudentAsk2FragmentToChatFragment2(cid)
         holder.itemView.findNavController().navigate(action)
     }
 
