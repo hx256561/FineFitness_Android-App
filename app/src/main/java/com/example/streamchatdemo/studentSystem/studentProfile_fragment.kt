@@ -40,7 +40,7 @@ class studentProfile_fragment:Fragment() {
     ): View? {
         _binding= StudentProfileFragmentBinding.inflate(inflater,container,false)
 
-
+        binding.textviewUserName.setText(client.getCurrentUser()?.id)
 
         return binding.root
     }
