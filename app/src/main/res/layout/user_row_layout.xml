@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
 
     <io.getstream.chat.android.ui.avatar.AvatarView
         android:id="@+id/avatar_imageView"
@@ -26,7 +29,7 @@
         android:layout_marginStart="8dp"
         android:maxLength="20"
         android:text="Username"
-        android:textColor="@color/titleColor"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/avatar_imageView"
@@ -37,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="01/01/2021 10:00 AM"
+        android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/username_textView"
         app:layout_constraintTop_toBottomOf="@+id/username_textView" />

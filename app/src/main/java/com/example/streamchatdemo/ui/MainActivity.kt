@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.ui.login.LoginFragmentDirections
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.name
@@ -16,11 +17,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private val client = ChatClient.instance()
 
+    private lateinit var mAuth:FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         navController = findNavController(R.id.navHostFragment)
+
+        mAuth= FirebaseAuth.getInstance()
+        var authUser=mAuth.currentUser
 
         /*
         //Code below are firebase test(success)
