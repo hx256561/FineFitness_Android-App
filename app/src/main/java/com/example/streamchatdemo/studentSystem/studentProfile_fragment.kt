@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
 import com.example.streamchatdemo.R
@@ -15,6 +16,7 @@ import com.example.streamchatdemo.databinding.StudentProfileFragmentBinding
 import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.ui.login.LoginFragment
 import com.getstream.sdk.chat.ChatUI.Companion.instance
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
@@ -30,6 +32,8 @@ class studentProfile_fragment:Fragment() {
     private var newExp:Int=0
     private val client = ChatClient.instance()
 
+    private lateinit var mAuth:FirebaseAuth
+
     val loginF=LoginFragment()
 
 
@@ -39,8 +43,13 @@ class studentProfile_fragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding= StudentProfileFragmentBinding.inflate(inflater,container,false)
+        mAuth= FirebaseAuth.getInstance()
+        val authUser=mAuth.currentUser
 
         binding.textviewUserName.setText(client.getCurrentUser()?.id)
+        binding.googleLogOut.setOnClickListener {
+            mAuth.signOut()
+        }
 
         return binding.root
     }

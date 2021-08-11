@@ -37,6 +37,9 @@
             app:destination="@id/studentHome_fragment"
             app:popUpTo="@id/studentHome_fragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_studentProfile_fragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
     </fragment>
     <fragment
         android:id="@+id/studentAsk1_fragment"
@@ -69,6 +72,11 @@
             android:name="channelId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.streamchatdemo.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 
 </navigation>
 
