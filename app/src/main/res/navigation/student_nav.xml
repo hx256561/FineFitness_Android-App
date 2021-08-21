@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_studentHome_fragment_to_studentAsk1_fragment"
             app:destination="@id/studentAsk1_fragment" />
+        <action
+            android:id="@+id/action_studentHome_fragment_to_studentSubscribe_fragment"
+            app:destination="@id/studentSubscribe_fragment" />
     </fragment>
     <fragment
         android:id="@+id/studentProfile_fragment"
@@ -77,6 +80,10 @@
         android:name="com.example.streamchatdemo.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/studentSubscribe_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentSubscribe_fragment"
+        android:label="studentSubscribe_fragment" />
 
 </navigation>
 
