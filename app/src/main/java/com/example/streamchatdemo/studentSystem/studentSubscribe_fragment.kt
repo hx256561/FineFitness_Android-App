@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.streamchatdemo.adapter.myViewPagerAdapter
 import com.example.streamchatdemo.databinding.StudentSubscribeFragmentBinding
-
+// 這個fragment裝著studentSubscibe1_fragment和2
 class studentSubscribe_fragment: Fragment() {
     private var _binding:StudentSubscribeFragmentBinding?=null
     private val binding get() = _binding!!

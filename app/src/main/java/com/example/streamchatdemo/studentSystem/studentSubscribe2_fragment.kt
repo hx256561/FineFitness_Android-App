@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.databinding.StudentSubscribe2FragmentBinding
 import com.example.streamchatdemo.databinding.Subscribe2ItemIntroBinding
-
+// 展開清單(expandableList)參考: https://medium.com/chikuwa-tech-study/android-雙層清單expandablelistview-987f03869296
 class studentSubscribe2_fragment: Fragment() {
     private var _binding:StudentSubscribe2FragmentBinding?=null
     private val binding get() = _binding!!
