@@ -7,13 +7,30 @@
     android:background="@drawable/bg_2">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textSubRec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="this is fragment2"
-        android:textColor="#FFFFFF"
+        android:layout_marginTop="135dp"
+        android:text="Subscription Recommendation"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/listView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"></TextView>
+
+    <ExpandableListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:childDivider="#FFFFFF"
+        android:dividerHeight="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSubRec" />
 </androidx.constraintlayout.widget.ConstraintLayout>
