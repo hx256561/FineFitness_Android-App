@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.streamchatdemo.adapter.myViewPagerAdapter
 import com.example.streamchatdemo.databinding.StudentSubscribeFragmentBinding
 
 class studentSubscribe_fragment: Fragment() {
@@ -16,7 +17,15 @@ class studentSubscribe_fragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding= StudentSubscribeFragmentBinding.inflate(inflater,container,false)
+        if(_binding==null){
+            _binding= StudentSubscribeFragmentBinding.inflate(inflater,container,false)
+            val adapter= myViewPagerAdapter(childFragmentManager)
+            adapter.addFragment(studentSubscribe1_fragment())
+            adapter.addFragment(studentSubscribe2_fragment())
+            val viewPager=binding.viewPager1
+            viewPager.adapter=adapter
+        }
+
         return binding.root
     }
 }
