@@ -25,11 +25,11 @@ class studentSubscribe2_fragment: Fragment() {
             _binding= StudentSubscribe2FragmentBinding.inflate(inflater,container,false)
 
             val listView=binding.listView
-            val coaches= listOf("coach Lin","coach Wood","coach Brook")
+            val coaches= listOf("coach Lin","coach Woods","coach Brook")
             val intros= listOf(
                 listOf("Skills:\nboxing, wrestling","Available time:\n(calender view)"),
-                listOf("Skills:","Available time:"),
-                listOf("Skills:","Available time:")
+                listOf("Skills:","Available time:\n(calender view)"),
+                listOf("Skills:","Available time:\n(calender view)")
             )
             val adapter=ExpandableListViewAdapter(requireContext(),coaches,intros)
             listView.setAdapter(adapter)

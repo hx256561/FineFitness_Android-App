@@ -83,7 +83,28 @@
     <fragment
         android:id="@+id/studentSubscribe_fragment"
         android:name="com.example.streamchatdemo.studentSystem.studentSubscribe_fragment"
-        android:label="studentSubscribe_fragment" />
+        android:label="studentSubscribe_fragment" >
+        <action
+            android:id="@+id/action_studentSubscribe_fragment_to_studentSubscribe1Chat_fragment"
+            app:destination="@id/studentSubscribe1Chat_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentSubscribe1Chat_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentSubscribe1Chat_fragment"
+        android:label="studentSubscribe1Chat_fragment" >
+        <action
+            android:id="@+id/action_studentSubscribe1Chat_fragment_to_chatFragment3"
+            app:destination="@id/chatFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment3"
+        android:name="com.example.streamchatdemo.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="channelId"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
 

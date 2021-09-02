@@ -104,6 +104,9 @@
         <action
             android:id="@+id/action_student_Home_to_student_asking1"
             app:destination="@id/student_asking1" />
+        <action
+            android:id="@+id/action_student_Home_to_studentSubscribe1_fragment"
+            app:destination="@id/studentSubscribe1_fragment" />
     </fragment>
     <fragment
         android:id="@+id/student_asking1"
@@ -130,4 +133,20 @@
             android:name="chatUser"
             app:argType="com.example.streamchatdemo.model.ChatUser" />
     </activity>
+    <fragment
+        android:id="@+id/studentSubscribe1_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentSubscribe1_fragment"
+        android:label="studentSubscribe1_fragment" >
+        <action
+            android:id="@+id/action_studentSubscribe1_fragment_to_studentSubscribe1Chat_fragment2"
+            app:destination="@id/studentSubscribe1Chat_fragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentSubscribe1Chat_fragment2"
+        android:name="com.example.streamchatdemo.studentSystem.studentSubscribe1Chat_fragment"
+        android:label="studentSubscribe1Chat_fragment" >
+        <action
+            android:id="@+id/action_studentSubscribe1Chat_fragment2_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
 </navigation>
