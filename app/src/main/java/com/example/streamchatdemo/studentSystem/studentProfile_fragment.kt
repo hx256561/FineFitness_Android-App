@@ -51,7 +51,16 @@ class studentProfile_fragment:Fragment() {
             mAuth.signOut()
         }
 
+        binding.btnBeCoach.setOnClickListener {
+            goToSubscribeChat()
+        }
+
         return binding.root
+    }
+
+    private fun goToSubscribeChat(){
+        var action1 = studentProfile_fragmentDirections.actionStudentProfileFragmentToStudentProfileBeCoachFragent()
+        findNavController().navigate(action1)
     }
 
 }

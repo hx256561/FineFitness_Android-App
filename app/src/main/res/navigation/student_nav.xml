@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_studentProfile_fragment_to_loginFragment2"
             app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_studentProfile_fragment_to_studentProfileBeCoach_fragent"
+            app:destination="@id/studentProfileBeCoach_fragent" />
     </fragment>
     <fragment
         android:id="@+id/studentAsk1_fragment"
@@ -105,6 +108,10 @@
             android:name="channelId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/studentProfileBeCoach_fragent"
+        android:name="com.example.streamchatdemo.studentSystem.studentProfileBeCoach_fragent"
+        android:label="studentProfileBeCoach_fragent" />
 
 </navigation>
 
