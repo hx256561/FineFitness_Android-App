@@ -8,6 +8,8 @@
         android:id="@+id/txtCoachIntro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:padding="20px"/>
 
 </LinearLayout>
