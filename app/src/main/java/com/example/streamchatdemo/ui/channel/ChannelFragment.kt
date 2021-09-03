@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.databinding.FragmentChannelBinding
+import com.google.firebase.auth.FirebaseAuth
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.Channel
 import io.getstream.chat.android.client.models.Filters
@@ -38,6 +39,9 @@ class ChannelFragment : Fragment() {
 
     private val client = ChatClient.instance()
     private lateinit var user: User
+
+    val authUser= FirebaseAuth.getInstance()
+    val currentAuthUser=authUser.currentUser
 
     @SuppressLint("WrongConstant")
     override fun onCreateView(
@@ -86,9 +90,15 @@ class ChannelFragment : Fragment() {
                 )
             } else {
                 User(
-                    id = args.chatUser.username,
+                    //id = args.chatUser.username,
+                    //下面這行: 利用google帳戶的uid來建立新使用者id(但是待改，
+                    // google帳戶的id會是一串獨特亂碼，原本sample的id設定顯得相當多餘，
+                    // 看要不要拔掉原本的id設定，或是移作其他用途)
+                    id=currentAuthUser?.uid.toString(),
                     extraData = mutableMapOf(
-                        "name" to args.chatUser.firstName
+                        //"name" to args.chatUser.firstName
+                        //下面這行: 利用google帳戶的displayName來建立新使用者名字
+                        "name" to currentAuthUser?.displayName.toString()
                     )
                 )
             }

@@ -44,10 +44,11 @@
             android:paddingRight="20dp">
 
             <TextView
+                android:id="@+id/user_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
-                android:text="UserID:"
+                android:text="使用者ID:"
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:textStyle="bold"></TextView>
@@ -71,10 +72,11 @@
             android:paddingRight="20dp">
 
             <TextView
+                android:id="@+id/user_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
-                android:text="Email: "
+                android:text="電話: "
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:textStyle="bold"></TextView>
@@ -101,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
-                android:text="Balance: "
+                android:text="餘額: "
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:textStyle="bold"></TextView>
@@ -116,8 +118,34 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/profile_columns_background_1"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="UID: "
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/user_uid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="250"
+                android:textColor="@color/white"
+                android:textSize="15dp"></TextView>
+
+        </LinearLayout>
+
         <Button
-            android:id="@+id/btn_beCoach"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
@@ -126,7 +154,8 @@
             android:paddingRight="10dp"
             android:text="Become A Coach"
             android:textColor="@color/white"
-            android:textSize="10dp"></Button>
+            android:textSize="10dp"
+            android:id="@+id/btn_BeCoach"></Button>
 
         <Button
             android:id="@+id/google_log_out"

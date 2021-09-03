@@ -36,6 +36,9 @@ class studentProfile_fragment:Fragment() {
 
     val loginF=LoginFragment()
 
+    val authUser=FirebaseAuth.getInstance()
+    val currentAuthUser=authUser.currentUser
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,12 +47,30 @@ class studentProfile_fragment:Fragment() {
     ): View? {
         _binding= StudentProfileFragmentBinding.inflate(inflater,container,false)
         mAuth= FirebaseAuth.getInstance()
-        val authUser=mAuth.currentUser
 
-        binding.textviewUserName.setText(client.getCurrentUser()?.id)
+        //binding.textviewUserName.setText(client.getCurrentUser()?.id)
         binding.googleLogOut.setOnClickListener {
             mAuth.signOut()
         }
+        binding.userUid.setText(currentAuthUser?.uid)
+
+        //下面這坨: 利用google的id從firestore抓下資料們
+        db.collection("Userlist").document(currentAuthUser?.uid.toString())
+            .get()
+            .addOnCompleteListener {
+                var resultName:String= String()
+                var resultPhone:String= String()
+                var resultBalance:String= String()
+                if(it.isSuccessful){
+                    resultName=it.result!!.data!!.getValue("firstname").toString()
+                    resultPhone=it.result!!.data!!.getValue("phone").toString()
+                    resultBalance=it.result!!.data!!.getValue("balance").toString()
+
+                    binding.textviewUserName.setText(resultName)
+                    binding.textviewUserTel.setText(resultPhone)
+                    binding.textviewUserBalance.setText(resultBalance)
+                }
+            }
 
         binding.btnBeCoach.setOnClickListener {
             goToSubscribeChat()
