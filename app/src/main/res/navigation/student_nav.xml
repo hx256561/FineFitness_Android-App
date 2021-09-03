@@ -98,6 +98,9 @@
         <action
             android:id="@+id/action_studentSubscribe1Chat_fragment_to_chatFragment3"
             app:destination="@id/chatFragment3" />
+        <action
+            android:id="@+id/action_studentSubscribe1Chat_fragment_to_studentSubscribe_fragment"
+            app:destination="@id/studentSubscribe_fragment" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment3"

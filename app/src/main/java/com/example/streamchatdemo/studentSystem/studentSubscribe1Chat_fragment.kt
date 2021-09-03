@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.streamchatdemo.adapter.subscribeAdapter
 import com.example.streamchatdemo.databinding.StudentSubscribe1ChatFragmentBinding
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.api.models.QueryUsersRequest
@@ -17,7 +18,7 @@ class studentSubscribe1Chat_fragment: Fragment() {
     var _binding:StudentSubscribe1ChatFragmentBinding?=null
     val binding get()=_binding!!
 
-    private val matchAdapter by lazy { com.example.streamchatdemo.adapter.matchAdapter() }
+    private val subscribeAdapter by lazy { subscribeAdapter() }
     private val client = ChatClient.instance()
 
     override fun onCreateView(
@@ -35,7 +36,7 @@ class studentSubscribe1Chat_fragment: Fragment() {
 
     private fun setupRecyclerView(){
         binding.studentSubChatRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.studentSubChatRecyclerView.adapter = matchAdapter
+        binding.studentSubChatRecyclerView.adapter = subscribeAdapter
     }
 
     private fun queryAllUsers() {
@@ -48,7 +49,7 @@ class studentSubscribe1Chat_fragment: Fragment() {
         client.queryUsers(request).enqueue { result ->
             if (result.isSuccess) {
                 val users: List<User> = result.data()
-                matchAdapter.setData(users)
+                subscribeAdapter.setData(users)
             } else {
                 Log.e("UsersFragment", result.error().message.toString())
             }
