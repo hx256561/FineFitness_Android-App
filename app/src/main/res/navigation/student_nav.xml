@@ -27,6 +27,15 @@
         <action
             android:id="@+id/action_studentHome_fragment_to_studentSubscribe_fragment"
             app:destination="@id/studentSubscribe_fragment" />
+        <action
+            android:id="@+id/action_studentHome_fragment_to_studentHome2_fragment"
+            app:destination="@id/studentHome2_fragment" />
+        <action
+            android:id="@+id/action_studentHome_fragment_to_coach_home1_fragment"
+            app:destination="@id/coach_home1_fragment" />
+        <action
+            android:id="@+id/action_studentHome_fragment_to_coach_home_activity"
+            app:destination="@id/coach_home_activity" />
     </fragment>
     <fragment
         android:id="@+id/studentProfile_fragment"
@@ -115,6 +124,22 @@
         android:id="@+id/studentProfileBeCoach_fragent"
         android:name="com.example.streamchatdemo.studentSystem.studentProfileBeCoach_fragent"
         android:label="studentProfileBeCoach_fragent" />
+    <fragment
+        android:id="@+id/studentHome2_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentHome2_fragment"
+        android:label="studentHome2_fragment" >
+        <action
+            android:id="@+id/action_studentHome2_fragment_to_coach_home1_fragment"
+            app:destination="@id/coach_home1_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coach_home1_fragment"
+        android:name="com.example.streamchatdemo.coachSystem.coach_home1_fragment"
+        android:label="coach_home1_fragment" />
+    <activity
+        android:id="@+id/coach_home_activity"
+        android:name="com.example.streamchatdemo.coachSystem.coach_home_activity"
+        android:label="coach_home_activity" />
 
 </navigation>
 

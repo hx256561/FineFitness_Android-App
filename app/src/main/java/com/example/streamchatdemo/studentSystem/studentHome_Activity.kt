@@ -22,6 +22,7 @@ import com.example.streamchatdemo.model.ChatUser
 import com.example.streamchatdemo.muscleFlow.newLoginArgs
 import com.example.streamchatdemo.muscleFlow.newLoginDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.User
 
@@ -33,6 +34,9 @@ class studentHome_Activity : AppCompatActivity() {
 
     private val client = ChatClient.instance()
     private lateinit var user: User
+
+    val authUser= FirebaseAuth.getInstance()
+    val currentAuthUser=authUser.currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,9 +71,14 @@ class studentHome_Activity : AppCompatActivity() {
                 )
             } else {
                 User(
-                    id = args.chatUser.username,
+                    //id = args.chatUser.username,
+                    //下面這行: 利用google帳戶的uid來建立新使用者id(但是待改，
+                    // google帳戶的id會是一串獨特亂碼，原本sample的id設定顯得相當多餘，
+                    // 看要不要拔掉原本的id設定，或是移作其他用途)
+                    id=currentAuthUser?.uid.toString(),
                     extraData = mutableMapOf(
-                        "name" to args.chatUser.firstName
+                        //下面這行: 利用google帳戶的displayName來建立新使用者名字
+                        "name" to currentAuthUser?.displayName.toString()
                     )
                 )
             }
