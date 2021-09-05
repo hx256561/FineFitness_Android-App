@@ -7,28 +7,32 @@
     android:background="@drawable/bg_2">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
-        >
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="30px">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Coach nickname"
-                android:textSize="20dp"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"/>
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/profile_columns_background_1"
-                android:hint=" i.e. Lin, Armstrong..."/>
+                android:hint=" i.e. Lin, Armstrong..." />
         </LinearLayout>
 
         <LinearLayout
@@ -36,19 +40,85 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="30px">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Skills: "
-                android:textSize="20dp"
+                android:text="Skills"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"/>
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/profile_columns_background_1"
-                android:hint=" i.e. Pilates, CrossFit..."/>
+                android:hint=" i.e. Pilates, CrossFit..." />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Certificate"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/profile_columns_background_1"
+                android:text="click to choose file"
+                android:textAllCaps="false"
+                android:textColor="#636362"
+                android:id="@+id/btn_chooseFile"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Real-time coach"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#FFFFFF"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subcribe coach"
+                android:textColor="#FFFFFF"
+                android:buttonTint="#FFFFFF"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_applyBCoach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_columns_background_1"
+            android:text="apply"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="30dp"/>
 
     </LinearLayout>
 
