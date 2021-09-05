@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StreamChatDemo">
         <activity android:name=".studentSystem.studentHome_Activity"></activity>
+        <activity android:name=".coachSystem.coach_home_activity"></activity>
         <activity
             android:name=".ui.MainActivity"
             android:screenOrientation="portrait">

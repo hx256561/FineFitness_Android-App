@@ -6,7 +6,7 @@
         android:top="2dp"
         android:left="2dp"
         android:right="2dp"></padding>
-    <solid android:color="#50ffffff" />
+    <solid android:color="#ffffff" />
     <size
         android:width="200dp"
         android:height="200dp"></size>

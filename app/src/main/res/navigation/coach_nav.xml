@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coach_graph"
+    app:startDestination="@id/coach_home1_fragment2">
+
+    <fragment
+        android:id="@+id/coach_home1_fragment2"
+        android:name="com.example.streamchatdemo.coachSystem.coach_home1_fragment"
+        android:label="coach_home1_fragment" />
+</navigation>

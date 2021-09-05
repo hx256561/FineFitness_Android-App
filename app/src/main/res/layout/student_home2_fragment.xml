@@ -5,6 +5,22 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_2">
 
+    <Button
+        android:id="@+id/go_to_coach_page"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="168dp"
+        app:layout_constraintBottom_toTopOf="@+id/monster_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/btn_shape2"
+        android:text="Coach Page"
+        android:textColor="@color/white"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"></Button>
+
     <ImageView
         android:id="@+id/monster_image"
         android:layout_width="300dp"
