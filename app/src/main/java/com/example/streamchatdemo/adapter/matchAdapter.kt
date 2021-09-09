@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.streamchatdemo.databinding.MatchRowLayoutBinding
 import com.example.streamchatdemo.databinding.UserRowLayoutBinding
 import com.example.streamchatdemo.muscleFlow.student_asking2Directions
 import com.example.streamchatdemo.studentSystem.studentAsk2_fragment
@@ -19,13 +20,13 @@ class matchAdapter : RecyclerView.Adapter<matchAdapter.MyViewHolder>() {
     private val client = ChatClient.instance()
     private var userList = emptyList<User>()
 
-    class MyViewHolder(val binding: UserRowLayoutBinding) : RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(val binding: MatchRowLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 
     //var randomNum=(0..2).random()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            UserRowLayoutBinding.inflate(
+            MatchRowLayoutBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -41,7 +42,7 @@ class matchAdapter : RecyclerView.Adapter<matchAdapter.MyViewHolder>() {
 
         holder.binding.avatarImageView.setUserData(currentUser)
         holder.binding.usernameTextView.text = currentUser.id
-        holder.binding.lastActiveTextView.text = convertDate(currentUser.lastActive!!.time)
+        //holder.binding.lastActiveTextView.text = convertDate(currentUser.lastActive!!.time)
         holder.binding.rootLayout.setOnClickListener {
             createNewChannel(currentUser.id, holder)
         }

@@ -5,14 +5,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_2">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Coach Home"
-        android:textColor="@color/white"
+    <Button
+        android:id="@+id/answer_question"
+        android:layout_width="250dp"
+        android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/btn_shape3"
+        android:text="Answer"
+        android:textColor="@color/white"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
