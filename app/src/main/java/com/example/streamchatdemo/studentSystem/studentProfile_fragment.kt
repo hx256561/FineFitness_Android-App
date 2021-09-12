@@ -36,8 +36,8 @@ class studentProfile_fragment:Fragment() {
 
     val loginF=LoginFragment()
 
-    val authUser=FirebaseAuth.getInstance()
-    val currentAuthUser=authUser.currentUser
+    private val authUser=FirebaseAuth.getInstance()
+    private val currentAuthUser=authUser.currentUser
 
 
     override fun onCreateView(
