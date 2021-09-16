@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coach_graph"
     app:startDestination="@id/coach_home1_fragment2">
 
     <fragment
         android:id="@+id/coach_home1_fragment2"
         android:name="com.example.streamchatdemo.coachSystem.coach_home1_fragment"
-        android:label="coach_home1_fragment" />
+        android:label="coach_home1_fragment" >
+        <action
+            android:id="@+id/action_coach_home1_fragment2_to_coach_answer_question1_fragment"
+            app:destination="@id/coach_answer_question1_fragment" />
+        <action
+            android:id="@+id/action_coach_home1_fragment2_to_coach_chatroom1_fragment"
+            app:destination="@id/coach_chatroom1_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coach_answer_question1_fragment"
+        android:name="com.example.streamchatdemo.coachSystem.coach_answer_question1_fragment"
+        android:label="coach_answer_question1_fragment" >
+        <action
+            android:id="@+id/action_coach_answer_question1_fragment_to_chatFragment4"
+            app:destination="@id/chatFragment4" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment4"
+        android:name="com.example.streamchatdemo.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="channelId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/coach_chatroom1_fragment"
+        android:name="com.example.streamchatdemo.coachSystem.coach_chatroom1_fragment"
+        android:label="coach_chatroom1_fragment" >
+        <action
+            android:id="@+id/action_coach_chatroom1_fragment_to_chatFragment4"
+            app:destination="@id/chatFragment4" />
+    </fragment>
 </navigation>

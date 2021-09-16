@@ -75,7 +75,7 @@ class matchAdapter : RecyclerView.Adapter<matchAdapter.MyViewHolder>() {
     }
 
     private fun navigateToChatFragment(holder: MyViewHolder, cid: String) {
-        val action = studentAsk2_fragmentDirections.actionStudentAsk2FragmentToChatFragment2(cid)
+        val action = studentAsk2_fragmentDirections.actionStudentAsk2FragmentToStudentChatFragment(cid)
         holder.itemView.findNavController().navigate(action)
     }
 

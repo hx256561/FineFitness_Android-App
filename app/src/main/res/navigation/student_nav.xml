@@ -75,17 +75,8 @@
             android:id="@+id/action_studentAsk2_fragment_to_studentAsk1_fragment"
             app:destination="@id/studentAsk1_fragment" />
         <action
-            android:id="@+id/action_studentAsk2_fragment_to_chatFragment2"
-            app:destination="@id/chatFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/chatFragment2"
-        android:name="com.example.streamchatdemo.ui.chat.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat">
-        <argument
-            android:name="channelId"
-            app:argType="string" />
+            android:id="@+id/action_studentAsk2_fragment_to_student_chat_fragment"
+            app:destination="@id/student_chat_fragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment2"
@@ -140,6 +131,14 @@
         android:id="@+id/coach_home_activity"
         android:name="com.example.streamchatdemo.coachSystem.coach_home_activity"
         android:label="coach_home_activity" />
+    <fragment
+        android:id="@+id/student_chat_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.student_chat_fragment"
+        android:label="student_chat_fragment" >
+        <argument
+            android:name="channelId"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
 
