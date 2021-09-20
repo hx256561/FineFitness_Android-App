@@ -20,15 +20,18 @@ class studentAsk1_fragment: Fragment() {
     ): View? {
         _binding=StudentAsk1FragmentBinding.inflate(inflater,container,false)
 
+
+
         binding.sendQuestion.setOnClickListener {
-            goToAsk2()
+            var question=binding.questionInput.getText().toString()
+            goToAsk2(question)
         }
 
         return binding.root
     }
 
-    private fun goToAsk2(){
-        var action1=studentAsk1_fragmentDirections.actionStudentAsk1FragmentToStudentAsk2Fragment()
+    private fun goToAsk2(ques:String){
+        var action1=studentAsk1_fragmentDirections.actionStudentAsk1FragmentToStudentAsk2Fragment(ques)
         findNavController().navigate(action1)
     }
 

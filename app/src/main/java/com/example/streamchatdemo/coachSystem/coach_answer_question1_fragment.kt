@@ -11,6 +11,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.streamchatdemo.databinding.CoachAnswerQuestion1FragmentBinding
 import com.example.streamchatdemo.ui.channel.ChannelFragmentDirections
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.Channel
 import io.getstream.chat.android.client.models.Filters
@@ -31,6 +33,12 @@ class coach_answer_question1_fragment: Fragment() {
     private val client = ChatClient.instance()
     private lateinit var user: User
 
+    private val db = FirebaseFirestore.getInstance()
+
+    private val authUser= FirebaseAuth.getInstance()
+    private val currentAuthUser=authUser.currentUser
+    private var authUid=currentAuthUser?.uid
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,6 +56,16 @@ class coach_answer_question1_fragment: Fragment() {
             val action= coach_answer_question1_fragmentDirections.actionCoachAnswerQuestion1FragmentToChatFragment4(channel.cid)
             findNavController().navigate(action)
         }
+
+        db.collection("QuestionList").document(authUid.toString()).get()
+            .addOnCompleteListener {
+                var ques:String=String()
+                if(it.isSuccessful){
+                    ques=it.result!!.data!!.getValue("question").toString()
+                }
+                binding.quess.setText(ques)
+            }
+
 
         return binding.root
     }

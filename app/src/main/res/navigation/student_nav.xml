@@ -71,6 +71,9 @@
         android:id="@+id/studentAsk2_fragment"
         android:name="com.example.streamchatdemo.studentSystem.studentAsk2_fragment"
         android:label="studentAsk2_fragment" >
+        <argument
+            android:name="question"
+            app:argType="string" />
         <action
             android:id="@+id/action_studentAsk2_fragment_to_studentAsk1_fragment"
             app:destination="@id/studentAsk1_fragment" />

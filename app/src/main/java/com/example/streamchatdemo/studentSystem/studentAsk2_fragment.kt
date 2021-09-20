@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.streamchatdemo.adapter.matchAdapter
 import com.example.streamchatdemo.databinding.StudentAsk2FragmentBinding
@@ -17,12 +18,15 @@ import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.api.models.QueryUsersRequest
 import io.getstream.chat.android.client.models.Filters
 import io.getstream.chat.android.client.models.User
+import java.util.*
+import kotlin.collections.HashMap
 
 class studentAsk2_fragment: Fragment() {
 
     var _binding:StudentAsk2FragmentBinding?=null
     val binding get()=_binding!!
 
+    private val args:studentAsk2_fragmentArgs by navArgs()
 
     private val matchAdapter by lazy { matchAdapter() }
     private val client = ChatClient.instance()
@@ -47,6 +51,8 @@ class studentAsk2_fragment: Fragment() {
         randomPick()
 
         //queryAllUsers()
+
+        Log.d(TAG, "SSSSSSSSSSSSSSSS onCreateView: "+args.question+"mmmmm")
 
         return binding.root
     }
@@ -91,10 +97,15 @@ class studentAsk2_fragment: Fragment() {
                 var result=idList[randomNum]
                 //將隨機挑選的字串傳入queryAllUsers裡面
                 queryAllUsers(result)
-            }
 
+                buildQuestion(result,args.question)
+            }
     }
 
+    private fun buildQuestion(coachId:String,question:String){
+        var ques= mapOf<String,String>("question" to question)
+        db.collection("QuestionList").document(coachId).set(ques)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

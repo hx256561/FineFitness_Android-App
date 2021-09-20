@@ -18,6 +18,7 @@ import com.example.streamchatdemo.databinding.StudentChatFragmentBinding
 import com.example.streamchatdemo.ui.chat.ChatFragmentArgs
 import com.getstream.sdk.chat.viewmodel.MessageInputViewModel
 import com.getstream.sdk.chat.viewmodel.messages.MessageListViewModel
+import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.models.Channel
 import io.getstream.chat.android.client.models.name
 import io.getstream.chat.android.livedata.ChatDomain
@@ -33,6 +34,8 @@ class student_chat_fragment : Fragment() {
 
     private var _binding: StudentChatFragmentBinding? = null
     private val binding get() = _binding!!
+
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -74,12 +77,11 @@ class student_chat_fragment : Fragment() {
         }
     }
 
-
     //在fragment的lifecycle結束後會自動把channel刪除
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
         Log.d(TAG, "onDestroyView: "+"& delete channel")
-        deleteChannel(args.channelId)
+        //deleteChannel(args.channelId)
     }
 }
