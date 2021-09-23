@@ -55,11 +55,12 @@ class studentSubscribe2_fragment: Fragment() {
                         //coachSkills.add(document.data.getValue("skills").toString())
                         coachSkills.add(skillArray)
                     }
+                    val adapter=ExpandableListViewAdapter(requireContext(),coachNames,coachSkills)
+                    listView.setAdapter(adapter)
             }
 
     //-----------------------------------------------------------------------------------------------------------
-            val adapter=ExpandableListViewAdapter(requireContext(),coaches,intros)
-            listView.setAdapter(adapter)
+
         }
         return binding.root
     }
