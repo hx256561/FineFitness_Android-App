@@ -56,6 +56,7 @@ class LoginFragment : Fragment() {
         }
 
 //----------------------------------------------------------------------------
+        /*
         binding.button.setOnClickListener {
             authenticateTheUser()
         }
@@ -63,6 +64,7 @@ class LoginFragment : Fragment() {
         binding.newLoginBtn.setOnClickListener {
             goToNewLogin()
         }
+         */
 
         return binding.root
     }
@@ -104,8 +106,9 @@ class LoginFragment : Fragment() {
                     Log.d(TAG, "signInWithCredential:success")
                     //val user = mAuth.currentUser
                     val chatUser = ChatUser("tester", "tester",0)
-                    val action = LoginFragmentDirections.actionLoginFragmentToNewLogin(chatUser)
-                    findNavController().navigate(action)
+                    //val action = LoginFragmentDirections.actionLoginFragmentToNewLogin(chatUser)
+                    val action2= LoginFragmentDirections.actionLoginFragmentToStudentHomeActivity(chatUser)
+                    findNavController().navigate(action2)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
@@ -115,6 +118,7 @@ class LoginFragment : Fragment() {
 
     //-------------------------------------------------------------------
 
+    /*
     private fun goToNewLogin(){
         val firstName = binding.firstNameEditText.text.toString()
         val username = binding.usernameEditText.text.toString()
@@ -126,8 +130,9 @@ class LoginFragment : Fragment() {
             findNavController().navigate(action)
         }
     }
+     */
 
-
+    /*
     private fun authenticateTheUser() {
         val firstName = binding.firstNameEditText.text.toString()
         val username = binding.usernameEditText.text.toString()
@@ -139,6 +144,7 @@ class LoginFragment : Fragment() {
             findNavController().navigate(action)
         }
     }
+     */
 
     private fun validateInput(inputText: String, textInputLayout: TextInputLayout): Boolean {
         return if (inputText.length <= 3) {

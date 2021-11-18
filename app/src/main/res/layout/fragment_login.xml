@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginFragment"
-    android:background="@drawable/bg_3">
-
+    android:background="@drawable/login_bg">
+    <!--
     <TextView
         android:id="@+id/title_textView"
         android:layout_width="wrap_content"
@@ -115,20 +115,35 @@
         app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button"
         android:background="@drawable/btn_shape2"/>
+        -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/google_sign_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="FineFitness"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_bold">
+
+    </TextView>
 
     <Button
         android:id="@+id/google_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_shape2"
+        android:background="@drawable/btn_shape4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:text="Sign in with Google"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_login_btn"
-        android:textColor="@color/white"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"></Button>
+        app:layout_constraintTop_toTopOf="parent"></Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

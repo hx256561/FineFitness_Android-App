@@ -85,7 +85,11 @@
         android:id="@+id/loginFragment2"
         android:name="com.example.streamchatdemo.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment2_to_studentHome_fragment"
+            app:destination="@id/studentHome_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/studentSubscribe_fragment"
         android:name="com.example.streamchatdemo.studentSystem.studentSubscribe_fragment"

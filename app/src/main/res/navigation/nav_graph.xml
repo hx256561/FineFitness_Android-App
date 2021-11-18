@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_loginFragment_to_newLogin"
             app:destination="@id/newLogin" />
+        <action
+            android:id="@+id/action_loginFragment_to_studentHome_Activity"
+            app:destination="@id/studentHome_Activity" />
     </fragment>
     <fragment
         android:id="@+id/channelFragment"

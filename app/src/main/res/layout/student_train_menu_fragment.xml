@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_2">
+    android:background="@drawable/bg_4">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="40dp"
         android:text="Train Menu"
         android:textColor="@color/white"
         android:textSize="20dp"
@@ -36,8 +36,8 @@
         android:id="@+id/add_train_menu_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#25FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/train_menu"

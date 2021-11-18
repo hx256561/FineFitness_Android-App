@@ -44,7 +44,6 @@ class studentSubscribe2_fragment: Fragment() {
                 listOf("Skills:","Available time:\n(calender view)")
             )
     //-------------教練與資料庫連動---------------------------------------------------------------------------------
-            //失敗告終  嗚嗚嗚嗚
             db.collection("Userlist").whereEqualTo("isCoach",1).get()
                 .addOnSuccessListener {
                         documents ->

@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
             val currentUser = client.getCurrentUser()
             if (currentUser != null) {
                 val user = ChatUser(currentUser.name, currentUser.id,0)
-                val action = LoginFragmentDirections.actionLoginFragmentToChannelFragment(user)
-                navController.navigate(action)
+                //val action = LoginFragmentDirections.actionLoginFragmentToChannelFragment(user)
+                //navController.navigate(action)
             }
         }
 

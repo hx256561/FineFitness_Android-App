@@ -74,7 +74,7 @@ class studentHome2_fragment: Fragment() {
                 if(expValue < 400){
                     binding.monsterImage.setBackgroundResource(R.drawable.monster_1)
                 }else{
-                    binding.monsterImage.setBackgroundResource(R.drawable.test_monster1)
+                    binding.monsterImage.setBackgroundResource(R.drawable.green_monster_1)
                 }
             }
     }
