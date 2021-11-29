@@ -11,7 +11,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.streamchatdemo.adapter.matchAdapter
 import com.example.streamchatdemo.databinding.StudentAsk2FragmentBinding
-import com.example.streamchatdemo.databinding.StudentHomeBinding
+//import com.example.streamchatdemo.databinding.StudentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.ChatClient

@@ -15,7 +15,7 @@ import com.example.streamchatdemo.R
 import com.example.streamchatdemo.databinding.StudentHome2FragmentBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-
+//monster page
 class studentHome2_fragment: Fragment() {
 
     private var _binding: StudentHome2FragmentBinding?=null

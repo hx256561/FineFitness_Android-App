@@ -4,29 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_2">
+    android:background="@drawable/bg_4">
 
     <TextView
         android:id="@+id/textSubRec"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
         android:text="Subscription Recommendation"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/listView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></TextView>
+        app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <ExpandableListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:childDivider="#FFFFFF"
         android:dividerHeight="1dp"
