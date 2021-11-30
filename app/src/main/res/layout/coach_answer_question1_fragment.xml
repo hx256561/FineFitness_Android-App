@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_2">
+    android:background="@drawable/bg_4">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,25 +16,25 @@
             android:id="@+id/quess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_shape3"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/btn_shape4"
+            android:padding="10dp"
             android:text="OOOOO"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/answer_channelsView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></TextView>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <io.getstream.chat.android.ui.channel.list.ChannelListView
             android:id="@+id/answer_channelsView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="150dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/quess" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

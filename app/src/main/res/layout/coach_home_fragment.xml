@@ -3,32 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_2">
+    android:background="@drawable/bg_4">
 
     <Button
         android:id="@+id/answer_question"
+        android:paddingTop="120dp"
         android:layout_width="250dp"
-        android:layout_height="400dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/btn_shape1"
+        android:text="Answer"
+        android:textColor="@color/white"
+        android:drawablePadding="-70dp"
+        android:drawableTop="@drawable/answer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/btn_shape3"
-        android:text="Answer"
-        android:textColor="@color/white"></Button>
+        app:layout_constraintTop_toTopOf="parent"></Button>
 
     <Button
         android:id="@+id/to_coach_chatroom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="102dp"
-        android:background="@drawable/btn_shape3"
+        android:paddingTop="45dp"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_shape1"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Chatroom"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:drawableTop="@drawable/bell"
+        android:drawablePadding="-20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answer_question"></Button>
