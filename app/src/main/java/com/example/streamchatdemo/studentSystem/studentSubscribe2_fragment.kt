@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.streamchatdemo.R
@@ -128,7 +129,6 @@ class studentSubscribe2_fragment: Fragment() {
             val view=convertView ?:LayoutInflater.from(context).inflate(R.layout.subscribe2_item_intro, null)
             val textView=view.findViewById<TextView>(R.id.txtCoachIntro)
             textView.text = coachIntro[groupPosition][childPosition]
-
             return view
         }
 

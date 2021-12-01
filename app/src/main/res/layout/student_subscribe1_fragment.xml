@@ -7,40 +7,31 @@
     android:background="@drawable/bg_4">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fragment1"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textInSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
         android:text="Subscribed Coach"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></TextView>
+        app:layout_constraintTop_toTopOf="parent"></TextView>
 
-    <Button
-        android:id="@+id/button_clsroom"
-        android:layout_width="wrap_content"
+    <ExpandableListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="class room"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        android:childDivider="#FFFFFF"
+        android:dividerHeight="1dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintTop_toBottomOf="@+id/textInSub" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

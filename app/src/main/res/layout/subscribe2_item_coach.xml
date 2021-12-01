@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_shape4">
 
     <TextView
+        android:id="@+id/txtCoachName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:gravity="center"
+        android:textColor="#FFFFFF"
         android:textSize="15dp"
-        android:id="@+id/txtCoachName"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/btn_shape4"/>
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
