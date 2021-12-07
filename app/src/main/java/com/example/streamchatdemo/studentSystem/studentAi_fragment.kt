@@ -70,6 +70,7 @@ class studentAi_fragment: Fragment() {
                 val result=it.metadata!!.reference!!.downloadUrl
                 result.addOnSuccessListener {
                     val link=it.toString()
+                    //link是影片網址
                     Log.d(TAG, "xxxxxxxx upload: "+link)
                 }
 
