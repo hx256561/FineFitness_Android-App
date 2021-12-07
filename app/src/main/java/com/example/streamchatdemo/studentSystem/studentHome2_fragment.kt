@@ -38,6 +38,11 @@ class studentHome2_fragment: Fragment() {
             goToCoachPage()
         }
 
+        binding.goToAi.setOnClickListener {
+            var actionAi=studentHome_fragmentDirections.actionStudentHomeFragmentToStudentAiFragment()
+            findNavController().navigate(actionAi)
+        }
+
         return binding.root
     }
 

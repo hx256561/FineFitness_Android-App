@@ -23,6 +23,7 @@
         <action
             android:id="@+id/action_loginFragment_to_newLogin"
             app:destination="@id/newLogin" />
+
         <action
             android:id="@+id/action_loginFragment_to_studentHome_Activity"
             app:destination="@id/studentHome_Activity" />
@@ -93,13 +94,15 @@
         <action
             android:id="@+id/action_newLogin_to_channelFragment"
             app:destination="@id/channelFragment" />
+        <!--
         <action
             android:id="@+id/action_newLogin_to_student_Home"
-            app:destination="@id/student_Home" />
+            app:destination="@id/student_Home" />-->
         <action
             android:id="@+id/action_newLogin_to_studentHome_Activity"
             app:destination="@id/studentHome_Activity" />
     </fragment>
+    <!--
     <fragment
         android:id="@+id/student_Home"
         android:name="com.example.streamchatdemo.muscleFlow.student_Home"
@@ -107,7 +110,8 @@
         <action
             android:id="@+id/action_student_Home_to_student_asking1"
             app:destination="@id/student_asking1" />
-    </fragment>
+    </fragment>-->
+    <!--
     <fragment
         android:id="@+id/student_asking1"
         android:name="com.example.streamchatdemo.muscleFlow.student_asking1"
@@ -115,7 +119,8 @@
         <action
             android:id="@+id/action_student_asking1_to_student_asking2"
             app:destination="@id/student_asking2" />
-    </fragment>
+    </fragment>-->
+    <!--
     <fragment
         android:id="@+id/student_asking2"
         android:name="com.example.streamchatdemo.muscleFlow.student_asking2"
@@ -123,7 +128,7 @@
         <action
             android:id="@+id/action_student_asking2_to_chatFragment"
             app:destination="@id/chatFragment" />
-    </fragment>
+    </fragment>-->
     <activity
         android:id="@+id/studentHome_Activity"
         android:name="com.example.streamchatdemo.studentSystem.studentHome_Activity"

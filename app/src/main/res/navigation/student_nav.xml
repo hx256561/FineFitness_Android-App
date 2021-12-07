@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_studentHome_fragment_to_coach_home_activity"
             app:destination="@id/coach_home_activity" />
+        <action
+            android:id="@+id/action_studentHome_fragment_to_studentAi_fragment"
+            app:destination="@id/studentAi_fragment" />
     </fragment>
     <fragment
         android:id="@+id/studentProfile_fragment"
@@ -86,9 +89,10 @@
         android:name="com.example.streamchatdemo.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
+        <!--
         <action
             android:id="@+id/action_loginFragment2_to_studentHome_fragment"
-            app:destination="@id/studentHome_fragment" />
+            app:destination="@id/studentHome_fragment" />-->
     </fragment>
     <fragment
         android:id="@+id/studentSubscribe_fragment"
@@ -129,6 +133,9 @@
         <action
             android:id="@+id/action_studentHome2_fragment_to_coach_home1_fragment"
             app:destination="@id/coach_home1_fragment" />
+        <action
+            android:id="@+id/action_studentHome2_fragment_to_studentAi_fragment"
+            app:destination="@id/studentAi_fragment" />
     </fragment>
     <fragment
         android:id="@+id/coach_home1_fragment"
@@ -146,6 +153,10 @@
             android:name="channelId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/studentAi_fragment"
+        android:name="com.example.streamchatdemo.studentSystem.studentAi_fragment"
+        android:label="studentAi_fragment" />
 
 </navigation>
 
