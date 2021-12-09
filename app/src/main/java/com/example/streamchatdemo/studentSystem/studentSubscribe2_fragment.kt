@@ -1,23 +1,20 @@
 package com.example.streamchatdemo.studentSystem
 
-import android.content.ContentValues.TAG
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
-import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.streamchatdemo.R
 import com.example.streamchatdemo.databinding.StudentSubscribe2FragmentBinding
-import com.example.streamchatdemo.databinding.Subscribe2ItemIntroBinding
-import com.example.streamchatdemo.model.Coach
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
-import kotlin.collections.mutableListOf as mutableListOf
+import java.util.*
 
 // 展開清單(expandableList)參考: https://medium.com/chikuwa-tech-study/android-雙層清單expandablelistview-987f03869296
 class studentSubscribe2_fragment: Fragment() {
@@ -59,8 +56,32 @@ class studentSubscribe2_fragment: Fragment() {
                     listView.setAdapter(adapter)
             }
 
-    //-----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
 
+            var cal = Calendar.getInstance()
+            val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                cal.set(Calendar.YEAR, year) // 取得現在的日期
+                cal.set(Calendar.MONTH, month)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            }
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                cal.set(Calendar.HOUR, hourOfDay) // 取得現在的時間
+                cal.set(Calendar.MINUTE, minute)
+            }
+
+            listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+                TimePickerDialog(requireContext(), timeSetListener, cal.get(Calendar.HOUR), Calendar.MINUTE, false).show()
+                DatePickerDialog(
+                    requireContext(),
+                    dateSetListener,
+                    cal.get(Calendar.YEAR),
+                    cal.get(Calendar.MONTH),
+                    cal.get(Calendar.DAY_OF_MONTH)).show()
+
+                Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show()
+
+                false
+            }
         }
         return binding.root
     }
@@ -103,7 +124,11 @@ class studentSubscribe2_fragment: Fragment() {
 
         // 定義子項目是否可以被點擊
         override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
-            return true
+            if(childPosition==1){
+                return true //idx 1 places button that leads to date picker
+            }
+            return false
+            //return true
         }
 
         // 串接資料與項目畫面
