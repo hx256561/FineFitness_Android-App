@@ -1,5 +1,6 @@
 package com.example.streamchatdemo.studentSystem
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
@@ -68,8 +69,10 @@ class studentSubscribe2_fragment: Fragment() {
                 cal.set(Calendar.HOUR, hourOfDay) // 取得現在的時間
                 cal.set(Calendar.MINUTE, minute)
             }
+            val builder = AlertDialog.Builder(context)
 
             listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+                builder.setMessage("Send request?").setPositiveButton("SURE", null).setNeutralButton("WAIT", null).show()
                 TimePickerDialog(requireContext(), timeSetListener, cal.get(Calendar.HOUR), Calendar.MINUTE, false).show()
                 DatePickerDialog(
                     requireContext(),
@@ -78,7 +81,7 @@ class studentSubscribe2_fragment: Fragment() {
                     cal.get(Calendar.MONTH),
                     cal.get(Calendar.DAY_OF_MONTH)).show()
 
-                Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show()
 
                 false
             }
