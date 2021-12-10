@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -70,9 +71,12 @@ class studentSubscribe2_fragment: Fragment() {
                 cal.set(Calendar.MINUTE, minute)
             }
             val builder = AlertDialog.Builder(context)
+            val positiveListener = DialogInterface.OnClickListener { dialog, which ->
+                Toast.makeText(context, "Appointment sent", Toast.LENGTH_SHORT).show()
+            }
 
             listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
-                builder.setMessage("Send request?").setPositiveButton("SURE", null).setNeutralButton("WAIT", null).show()
+                builder.setMessage("Send request?").setPositiveButton("SURE", positiveListener).setNeutralButton("WAIT", null).show()
                 TimePickerDialog(requireContext(), timeSetListener, cal.get(Calendar.HOUR), Calendar.MINUTE, false).show()
                 DatePickerDialog(
                     requireContext(),
