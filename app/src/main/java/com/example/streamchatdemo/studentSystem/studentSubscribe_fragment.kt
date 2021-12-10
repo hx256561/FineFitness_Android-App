@@ -20,8 +20,9 @@ class studentSubscribe_fragment: Fragment() {
         if(_binding==null){
             _binding= StudentSubscribeFragmentBinding.inflate(inflater,container,false)
             val adapter= myViewPagerAdapter(childFragmentManager)
-            adapter.addFragment(studentSubscribe1_fragment())
             adapter.addFragment(studentSubscribe2_fragment())
+            adapter.addFragment(studentSubscribe1_fragment())
+            //adapter.addFragment(studentSubscribe2_fragment())
             val viewPager=binding.viewPager1
             viewPager.adapter=adapter
         }

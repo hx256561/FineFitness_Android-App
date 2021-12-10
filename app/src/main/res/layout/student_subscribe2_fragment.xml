@@ -8,13 +8,13 @@
 
     <TextView
         android:id="@+id/textSubRec"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:text="Subscription Recommendation"
+        android:layout_marginTop="60dp"
+        android:text="Subscribed Coach"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="78dp"
         android:layout_marginEnd="32dp"
         android:childDivider="#FFFFFF"
         android:dividerHeight="1dp"

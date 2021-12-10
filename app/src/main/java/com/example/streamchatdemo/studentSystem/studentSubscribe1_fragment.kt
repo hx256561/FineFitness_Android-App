@@ -42,11 +42,17 @@ class studentSubscribe1_fragment: Fragment() {
                     documents ->
                 for(document in documents){
                     coachNames.add(document.data.getValue("firstname").toString())
-                    val skillArray= listOf(document.data.getValue("skills").toString(),"Available time:\n" +
+                    val skillArray= listOf(document.data.getValue("skills").toString(),"Appointment time:\n" +
                             "(calender view)")
                     coachSkills.add(skillArray)
                 }
+                /*
                 val adapter= studentSubscribe2_fragment.ExpandableListViewAdapter(
+                    requireContext(),
+                    coachNames,
+                    coachSkills
+                )*/
+                val adapter = ExpandableListViewAdapter1(
                     requireContext(),
                     coachNames,
                     coachSkills
@@ -54,11 +60,14 @@ class studentSubscribe1_fragment: Fragment() {
                 listView.setAdapter(adapter)
             }
         //-------
+        listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+            false
+        }
 
         return binding.root
     }
 
-    class ExpandableListViewAdapter(
+    class ExpandableListViewAdapter1(
         private var context: Context,
         private var coachName: List<String>, //紀錄推薦教練的list
         private var coachIntro: List<List<String>>, //紀錄(理想是)時間表和專長；展開後是2Dlist,之後視情況調整
