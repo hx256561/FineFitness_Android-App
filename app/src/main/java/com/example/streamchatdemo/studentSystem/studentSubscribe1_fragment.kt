@@ -62,11 +62,18 @@ class studentSubscribe1_fragment: Fragment() {
             }
         //-------
         listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
-            /*
+
             val updatedSkillArray = listOf(coachSkills[groupPosition].get(0), "Subscribed!")
             coachSkills.set(groupPosition,updatedSkillArray)
-             */
+
             Toast.makeText(context, "Subscribed!", Toast.LENGTH_SHORT).show()
+            val adapterXX = ExpandableListViewAdapter1(
+                requireContext(),
+                coachNames,
+                coachSkills
+            )
+            listView.setAdapter(adapterXX)
+
             false
         }
 
