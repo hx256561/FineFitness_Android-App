@@ -32,6 +32,9 @@
 
     <EditText
         android:id="@+id/question_input"
+        android:gravity="start"
+        android:padding="15dp"
+        android:textColor="@color/white"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_marginStart="50dp"

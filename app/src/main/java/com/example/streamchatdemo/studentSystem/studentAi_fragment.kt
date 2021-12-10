@@ -51,11 +51,11 @@ class studentAi_fragment: Fragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        var uriText = binding.url
+        //var uriText = binding.url
         if(resultCode==RESULT_OK){
             if(requestCode==VIDEO){
                 uri= data!!.data!!
-                uriText.text=uri.toString()
+                //uriText.text=uri.toString()
                 upload()
             }
         }
