@@ -14,8 +14,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.streamchatdemo.R
+import com.example.streamchatdemo.adapter.matchAdapter
 import com.example.streamchatdemo.databinding.StudentSubscribe2FragmentBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import java.lang.StringBuilder
 import java.util.*
 
 // 展開清單(expandableList)參考: https://medium.com/chikuwa-tech-study/android-雙層清單expandablelistview-987f03869296
@@ -50,7 +52,7 @@ class studentSubscribe2_fragment: Fragment() {
                     for(document in documents){
                         coachNames.add(document.data.getValue("firstname").toString())
                         val skillArray= listOf(document.data.getValue("skills").toString(),"Press to\n" +
-                                "Make an appointment")
+                                "Make an appointment", "Chat room")
                         //coachSkills.add(document.data.getValue("skills").toString())
                         coachSkills.add(skillArray)
                     }
@@ -76,21 +78,37 @@ class studentSubscribe2_fragment: Fragment() {
             }
 
             listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
-                builder.setMessage("Send request?").setPositiveButton("SURE", positiveListener).setNeutralButton("WAIT", null).show()
-                TimePickerDialog(requireContext(), timeSetListener, cal.get(Calendar.HOUR), Calendar.MINUTE, false).show()
-                DatePickerDialog(
-                    requireContext(),
-                    dateSetListener,
-                    cal.get(Calendar.YEAR),
-                    cal.get(Calendar.MONTH),
-                    cal.get(Calendar.DAY_OF_MONTH)).show()
-
-                //Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show()
+                if(childPosition==1){
+                    builder.setMessage("Send request?").setPositiveButton("SURE", positiveListener).setNeutralButton("WAIT", null).show()
+                    TimePickerDialog(requireContext(), timeSetListener, cal.get(Calendar.HOUR), Calendar.MINUTE, false).show()
+                    DatePickerDialog(
+                        requireContext(),
+                        dateSetListener,
+                        cal.get(Calendar.YEAR),
+                        cal.get(Calendar.MONTH),
+                        cal.get(Calendar.DAY_OF_MONTH)).show()
+                }/*else if(childPosition==2){
+                    openChatRoom(groupPosition)
+                }*/
 
                 false
             }
         }
+
         return binding.root
+    }
+
+    // 從subscribe2進每個教練的聊天室 (未完成 要建adapter)
+    private fun openChatRoom(coachIndex: Int){
+        var getCoachId: String
+        db.collection("Userlist").whereEqualTo("isCoach",1).get().addOnSuccessListener{ documents ->
+            for((idx, document) in documents.withIndex()){
+                if(idx == coachIndex){
+                    getCoachId = document.data.getValue("id").toString()
+                }
+            }
+        }
+        //matchAdapter.
     }
 
     class ExpandableListViewAdapter(
@@ -131,8 +149,8 @@ class studentSubscribe2_fragment: Fragment() {
 
         // 定義子項目是否可以被點擊
         override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
-            if(childPosition==1){
-                return true //idx 1 places button that leads to date picker
+            if(childPosition!=0){
+                return true //idx 1 places button that leads to date picker & 2 leads to chat room
             }
             return false
             //return true
