@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.streamchatdemo.R
@@ -42,8 +43,8 @@ class studentSubscribe1_fragment: Fragment() {
                     documents ->
                 for(document in documents){
                     coachNames.add(document.data.getValue("firstname").toString())
-                    val skillArray= listOf(document.data.getValue("skills").toString(),"Appointment time:\n" +
-                            "(calender view)")
+                    val skillArray = listOf(document.data.getValue("skills").toString(),"Press to\n" +
+                            "Subscribe")
                     coachSkills.add(skillArray)
                 }
                 /*
@@ -61,6 +62,11 @@ class studentSubscribe1_fragment: Fragment() {
             }
         //-------
         listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+            /*
+            val updatedSkillArray = listOf(coachSkills[groupPosition].get(0), "Subscribed!")
+            coachSkills.set(groupPosition,updatedSkillArray)
+             */
+            Toast.makeText(context, "Subscribed!", Toast.LENGTH_SHORT).show()
             false
         }
 
@@ -105,7 +111,10 @@ class studentSubscribe1_fragment: Fragment() {
 
         // 定義子項目是否可以被點擊
         override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
-            return true
+            if(childPosition==1){
+                return true // idx 1 places subscribe button
+            }
+            return false
         }
 
         // 串接資料與項目畫面

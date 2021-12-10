@@ -48,8 +48,8 @@ class studentSubscribe2_fragment: Fragment() {
                         documents ->
                     for(document in documents){
                         coachNames.add(document.data.getValue("firstname").toString())
-                        val skillArray= listOf(document.data.getValue("skills").toString(),"Available time:\n" +
-                                "(calender view)")
+                        val skillArray= listOf(document.data.getValue("skills").toString(),"Press to\n" +
+                                "Make an appointment")
                         //coachSkills.add(document.data.getValue("skills").toString())
                         coachSkills.add(skillArray)
                     }
