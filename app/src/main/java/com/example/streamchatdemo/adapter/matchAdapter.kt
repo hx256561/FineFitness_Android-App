@@ -12,6 +12,8 @@ import com.example.streamchatdemo.databinding.UserRowLayoutBinding
 import com.example.streamchatdemo.studentSystem.studentAsk2_fragment
 import com.example.streamchatdemo.studentSystem.studentAsk2_fragmentDirections
 import com.example.streamchatdemo.ui.users.UsersFragmentDirections
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.User
 
@@ -19,6 +21,11 @@ class matchAdapter : RecyclerView.Adapter<matchAdapter.MyViewHolder>() {
 
     private val client = ChatClient.instance()
     private var userList = emptyList<User>()
+
+    private val db = FirebaseFirestore.getInstance()
+    private lateinit var mAuth: FirebaseAuth
+    private val authUser=FirebaseAuth.getInstance()
+    private val currentAuthUser=authUser.currentUser
 
     class MyViewHolder(val binding: MatchRowLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -41,7 +48,18 @@ class matchAdapter : RecyclerView.Adapter<matchAdapter.MyViewHolder>() {
         val currentUser = userList[position]
 
         holder.binding.avatarImageView.setUserData(currentUser)
-        holder.binding.usernameTextView.text = currentUser.id
+        //holder.binding.usernameTextView.text = currentUser.id
+
+        db.collection("Userlist").document(currentUser.id.toString())
+            .get()
+            .addOnCompleteListener {
+                var resultName:String= String()
+                if(it.isSuccessful){
+                    resultName=it.result!!.data!!.getValue("firstname").toString()
+                    holder.binding.usernameTextView.text=resultName
+                }
+            }
+
         //holder.binding.lastActiveTextView.text = convertDate(currentUser.lastActive!!.time)
         holder.binding.rootLayout.setOnClickListener {
             createNewChannel(currentUser.id, holder)

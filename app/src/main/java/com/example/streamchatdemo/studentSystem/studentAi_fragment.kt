@@ -47,6 +47,10 @@ class studentAi_fragment: Fragment() {
             startActivityForResult(Intent.createChooser(intent,"Select Video"),VIDEO)
         })
 
+        binding.video.setVideoPath("https://firebasestorage.googleapis.com/v0/b/chat1-6a6ae.appspot.com/o/Uploads%2Fvideo%3A117?alt=media&token=0b431d24-5374-426d-9b08-3adeede8228c")
+        binding.video.start()
+
+
         return binding.root
     }
 

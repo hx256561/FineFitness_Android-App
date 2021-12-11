@@ -5,9 +5,11 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/btn_shape3"
+    android:background="@drawable/btn_shape1"
     android:paddingLeft="20dp"
-    android:paddingRight="20dp">
+    android:paddingRight="20dp"
+    android:paddingTop="120dp"
+    android:paddingBottom="120dp">
 
     <io.getstream.chat.android.ui.avatar.AvatarView
         android:id="@+id/avatar_imageView"
