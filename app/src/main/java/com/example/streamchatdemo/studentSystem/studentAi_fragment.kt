@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.streamchatdemo.databinding.StudentAiFragmentBinding
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -29,6 +30,10 @@ class studentAi_fragment: Fragment() {
     //var uri:Uri?=null
     lateinit var uri:Uri
     lateinit var mStorage:StorageReference
+
+    private val authUser= FirebaseAuth.getInstance()
+    private val currentAuthUser=authUser.currentUser
+    private var authUid=currentAuthUser?.uid
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -78,7 +83,9 @@ class studentAi_fragment: Fragment() {
                     Log.d(TAG, "xxxxxxxx upload: "+link)
                 }
 
-                Toast.makeText(context,"Successfully Uploaded",Toast.LENGTH_LONG).show()
+                Toast.makeText(context,"Successfully Uploaded"+authUid,Toast.LENGTH_LONG).show()
+                //上面表示已經傳好
+
             }
         }catch (e:Exception){
             Toast.makeText(context,e.toString(),Toast.LENGTH_LONG).show()
