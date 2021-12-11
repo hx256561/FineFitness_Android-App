@@ -24,6 +24,7 @@ class studentHome2_fragment: Fragment() {
 
     val authUser= FirebaseAuth.getInstance()
     val currentAuthUser=authUser.currentUser
+    private var authUid=currentAuthUser!!.uid
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,7 +69,7 @@ class studentHome2_fragment: Fragment() {
     }
 
     private fun changeMonsterImage(){
-        db.collection("Userlist").document("0bwQiauYGM8699qnhEZ9")
+        db.collection("Userlist").document(authUid)
             .get()
             .addOnCompleteListener {
                 var result:String= String()
@@ -76,8 +77,8 @@ class studentHome2_fragment: Fragment() {
                     result=it.result!!.data!!.getValue("exp").toString()
                 }
                 var expValue=result.toInt()
-                if(expValue < 400){
-                    binding.monsterImage.setBackgroundResource(R.drawable.monster_1)
+                if(expValue > 400){
+                    binding.monsterImage.setBackgroundResource(R.drawable.green_monster2)
                 }else{
                     binding.monsterImage.setBackgroundResource(R.drawable.green_monster_1)
                 }
