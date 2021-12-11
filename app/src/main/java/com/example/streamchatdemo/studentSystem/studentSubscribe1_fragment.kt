@@ -44,7 +44,7 @@ class studentSubscribe1_fragment: Fragment() {
                 for(document in documents){
                     coachNames.add(document.data.getValue("firstname").toString())
                     val skillArray = listOf(document.data.getValue("skills").toString(),"Press to\n" +
-                            "Subscribe")
+                            "Subscribe", "Chat room")
                     coachSkills.add(skillArray)
                 }
                 /*
@@ -63,21 +63,30 @@ class studentSubscribe1_fragment: Fragment() {
         //-------
         listView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
 
-            val updatedSkillArray = listOf(coachSkills[groupPosition].get(0), "Subscribed!")
-            coachSkills.set(groupPosition,updatedSkillArray)
+            if(childPosition==1){
+                val updatedSkillArray = listOf(coachSkills[groupPosition].get(0), "Subscribed!", coachSkills[groupPosition].get(2))
+                coachSkills.set(groupPosition,updatedSkillArray)
 
-            Toast.makeText(context, "Subscribed!", Toast.LENGTH_SHORT).show()
-            val adapterXX = ExpandableListViewAdapter1(
-                requireContext(),
-                coachNames,
-                coachSkills
-            )
-            listView.setAdapter(adapterXX)
-
+                Toast.makeText(context, "Subscribed!", Toast.LENGTH_SHORT).show()
+                val adapterXX = ExpandableListViewAdapter1(
+                    requireContext(),
+                    coachNames,
+                    coachSkills
+                )
+                listView.setAdapter(adapterXX)
+            }
+            if(childPosition==2){
+                goToSub1(groupPosition)
+            }
             false
         }
 
         return binding.root
+    }
+
+    private fun goToSub1(coachIndex: Int){
+        var action = studentSubscribe_fragmentDirections.actionStudentSubscribeFragmentToStudentSubscribe1ChatFragment()
+        findNavController().navigate(action)
     }
 
     class ExpandableListViewAdapter1(
@@ -120,6 +129,8 @@ class studentSubscribe1_fragment: Fragment() {
         override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
             if(childPosition==1){
                 return true // idx 1 places subscribe button
+            }else if(childPosition==2){
+                return true
             }
             return false
         }
