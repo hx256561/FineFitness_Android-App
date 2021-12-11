@@ -85,6 +85,7 @@ class studentAi_fragment: Fragment() {
 
                 Toast.makeText(context,"Successfully Uploaded"+authUid,Toast.LENGTH_LONG).show()
                 //上面表示已經傳好
+                //id 是 authUid
 
             }
         }catch (e:Exception){
