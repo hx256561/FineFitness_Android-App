@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import com.example.streamchatdemo.databinding.StudentAiFragmentBinding
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -35,6 +36,8 @@ class studentAi_fragment: Fragment() {
     private val currentAuthUser=authUser.currentUser
     private var authUid=currentAuthUser?.uid
 
+    private val db = FirebaseFirestore.getInstance()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,9 +54,6 @@ class studentAi_fragment: Fragment() {
             intent.setAction(Intent.ACTION_GET_CONTENT)
             startActivityForResult(Intent.createChooser(intent,"Select Video"),VIDEO)
         })
-
-        binding.video.setVideoPath("https://firebasestorage.googleapis.com/v0/b/chat1-6a6ae.appspot.com/o/Uploads%2Fvideo%3A117?alt=media&token=0b431d24-5374-426d-9b08-3adeede8228c")
-        binding.video.start()
 
 
         return binding.root
@@ -86,6 +86,8 @@ class studentAi_fragment: Fragment() {
                 Toast.makeText(context,"Successfully Uploaded"+authUid,Toast.LENGTH_LONG).show()
                 //上面表示已經傳好
                 //id 是 authUid
+                binding.video.setVideoPath("https://firebasestorage.googleapis.com/v0/b/chat1-6a6ae.appspot.com/o/Uploads%2Fokvideo.mp4?alt=media&token=a2cd6d77-f62e-49d5-af84-f1a4150f0382")
+                binding.video.start()
 
             }
         }catch (e:Exception){
