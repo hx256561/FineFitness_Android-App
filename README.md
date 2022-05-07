@@ -22,8 +22,9 @@ Since my Free Stream Service program had already expried, the chatroom function 
 ### FineFitness App Concept, Figma (100% completed sample)
 https://www.figma.com/proto/fDJFCkMNi79o8se2v3UlW0/new_FineFitnessUI?node-id=9%3A381&scaling=scale-down&page-id=0%3A1&starting-point-node-id=9%3A381&show-proto-sidebar=1
 <br>
-![alt text](https://user-images.githubusercontent.com/45808441/167261096-46b7b878-2098-46ba-9011-da15647795c1.png)
 
+
+![stu_home](https://user-images.githubusercontent.com/45808441/167261300-0760f4bf-66cd-4e30-8af2-b4be9d026047.png)
 
 
 
