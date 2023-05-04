@@ -1,13 +1,12 @@
-## FineFitness App-Senior project in MIS department
+<h1>FineFitness App-Senior project in MIS department</h1>
 
-### Introduction
+<h2>Introduction</h2>
 FineFitness App project is a communication app that built based on Android Studio and Stream SDK, written in Kotlin.
 <br>
 Target audiences of FineFitness are personal trainers and gym beginners. Personal trainers can help gym beginners to solve their fitness-related problem.
 <br>
-### ---
 <br>
-Users are able to signing with Google.
+Users are able to sign in with Google.
 <br>
 Home page contains the function of recording training menu and interact with users' virtual character.
 <br>
